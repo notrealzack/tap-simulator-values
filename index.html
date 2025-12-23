@@ -239,7 +239,7 @@ addPet('permanentSecrets', {
   updated: now(),
   variants: {
     normal: { value: "40", change: "-", demand: "3" },
-    rainbow: { value: "180", change: "-", demand: "4" }
+    rainbow: { value: "180", change: "-", demand: "3" }
   }
 });
 
@@ -249,8 +249,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "45", change: "-", demand: "4" },
-    rainbow: { value: "200", change: "-", demand: "4" }
+    normal: { value: "45", change: "-", demand: "3" },
+    rainbow: { value: "200", change: "-", demand: "3" }
   }
 });
 
@@ -261,7 +261,7 @@ addPet('permanentSecrets', {
   updated: now(),
   variants: {
     normal: { value: "40", change: "-", demand: "3" },
-    rainbow: { value: "180", change: "-", demand: "4" }
+    rainbow: { value: "180", change: "-", demand: "3" }
   }
 });
 
@@ -272,7 +272,7 @@ addPet('permanentSecrets', {
   updated: now(),
   variants: {
     normal: { value: "45", change: "-", demand: "3" },
-    rainbow: { value: "200", change: "-", demand: "4" }
+    rainbow: { value: "200", change: "-", demand: "3" }
   }
 });
 
@@ -282,7 +282,7 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "90", change: "-", demand: "4" },
+    normal: { value: "90", change: "-", demand: "3" },
     rainbow: { value: "400", change: "-", demand: "4" }
   }
 });
@@ -294,7 +294,7 @@ addPet('permanentSecrets', {
   updated: now(),
   variants: {
     normal: { value: "50", change: "-", demand: "4" },
-    rainbow: { value: "225", change: "-", demand: "5" }
+    rainbow: { value: "225", change: "-", demand: "4" }
   }
 });
 
@@ -305,8 +305,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "250", change: "-", demand: "4" },
-    rainbow: { value: "1125", change: "-", demand: "5" }
+    normal: { value: "240", change: "-", demand: "4" },
+    rainbow: { value: "1080", change: "-", demand: "4" }
   }
 });
 
@@ -339,8 +339,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "160", change: "+", demand: "7" },
-    rainbow: { value: "720", change: "+", demand: "8" }
+    normal: { value: "180", change: "+", demand: "7" },
+    rainbow: { value: "810", change: "+", demand: "8" }
   }
 });
 
@@ -350,8 +350,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "850", change: "+", demand: "8" },
-    rainbow: { value: "3825", change: "+", demand: "8" }
+    normal: { value: "925", change: "+", demand: "8" },
+    rainbow: { value: "4200", change: "+", demand: "8" }
   }
 });
 
@@ -422,7 +422,7 @@ addPet('robux', {
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-23T20:36:00Z").getTime();
+const fixedTime = new Date("2025-12-23T22:48:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -439,5 +439,6 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
