@@ -249,8 +249,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "50", change: "-", demand: "4" },
-    rainbow: { value: "225", change: "-", demand: "4" }
+    normal: { value: "45", change: "-", demand: "4" },
+    rainbow: { value: "200", change: "-", demand: "4" }
   }
 });
 
@@ -260,8 +260,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "45", change: "-", demand: "3" },
-    rainbow: { value: "200", change: "-", demand: "4" }
+    normal: { value: "40", change: "-", demand: "3" },
+    rainbow: { value: "180", change: "-", demand: "4" }
   }
 });
 
@@ -271,8 +271,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 250,000",
   updated: now(),
   variants: {
-    normal: { value: "50", change: "-", demand: "3" },
-    rainbow: { value: "225", change: "-", demand: "4" }
+    normal: { value: "45", change: "-", demand: "3" },
+    rainbow: { value: "200", change: "-", demand: "4" }
   }
 });
 
@@ -282,8 +282,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "100", change: "-", demand: "4" },
-    rainbow: { value: "450", change: "-", demand: "4" }
+    normal: { value: "90", change: "-", demand: "4" },
+    rainbow: { value: "400", change: "-", demand: "4" }
   }
 });
 
@@ -293,8 +293,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 250,000",
   updated: now(),
   variants: {
-    normal: { value: "60", change: "-", demand: "4" },
-    rainbow: { value: "270", change: "-", demand: "5" }
+    normal: { value: "50", change: "-", demand: "4" },
+    rainbow: { value: "225", change: "-", demand: "5" }
   }
 });
 
@@ -305,8 +305,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "300", change: "-", demand: "5" },
-    rainbow: { value: "1350", change: "-", demand: "5" }
+    normal: { value: "250", change: "-", demand: "4" },
+    rainbow: { value: "1125", change: "-", demand: "5" }
   }
 });
 
@@ -328,8 +328,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 150,000",
   updated: now(),
   variants: {
-    normal: { value: "55", change: "+", demand: "7" },
-    rainbow: { value: "250", change: "+", demand: "8" }
+    normal: { value: "60", change: "+", demand: "7" },
+    rainbow: { value: "270", change: "+", demand: "8" }
   }
 });
 
@@ -339,8 +339,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "150", change: "+", demand: "7" },
-    rainbow: { value: "675", change: "+", demand: "8" }
+    normal: { value: "160", change: "+", demand: "7" },
+    rainbow: { value: "720", change: "+", demand: "8" }
   }
 });
 
@@ -350,8 +350,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "825", change: "+", demand: "8" },
-    rainbow: { value: "3700", change: "+", demand: "8" }
+    normal: { value: "850", change: "+", demand: "8" },
+    rainbow: { value: "3825", change: "+", demand: "8" }
   }
 });
 
@@ -394,8 +394,8 @@ addPet('robux', {
   description: "Found in the Exclusive Chronos Egg. 80% chance",
   updated: now(),
   variants: {
-    normal: { value: "110", change: "+", demand: "7" },
-    rainbow: { value: "500", change: "+", demand: "7" }
+    normal: { value: "115", change: "+", demand: "7" },
+    rainbow: { value: "520", change: "+", demand: "7" }
   }
 });
 
@@ -405,8 +405,8 @@ addPet('robux', {
   description: "Found in the Exclusive Chronos Egg. 20% chance",
   updated: now(),
   variants: {
-    normal: { value: "160", change: "+", demand: "7" },
-    rainbow: { value: "720", change: "+", demand: "7" }
+    normal: { value: "165", change: "+", demand: "7" },
+    rainbow: { value: "740", change: "+", demand: "7" }
   }
 });
 
@@ -422,7 +422,7 @@ addPet('robux', {
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-23T19:53:00Z").getTime();
+const fixedTime = new Date("2025-12-23T20:36:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -439,4 +439,5 @@ setInterval(() => {
 </body>
 
 </html>
+
 
