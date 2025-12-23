@@ -328,8 +328,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 150,000",
   updated: now(),
   variants: {
-    normal: { value: "50", change: "+", demand: "7" },
-    rainbow: { value: "225", change: "+", demand: "8" }
+    normal: { value: "55", change: "+", demand: "7" },
+    rainbow: { value: "250", change: "+", demand: "8" }
   }
 });
 
@@ -339,8 +339,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "140", change: "+", demand: "7" },
-    rainbow: { value: "630", change: "+", demand: "8" }
+    normal: { value: "150", change: "+", demand: "7" },
+    rainbow: { value: "675", change: "+", demand: "8" }
   }
 });
 
@@ -350,8 +350,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "750", change: "+", demand: "8" },
-    rainbow: { value: "3375", change: "+", demand: "8" }
+    normal: { value: "825", change: "+", demand: "8" },
+    rainbow: { value: "3700", change: "+", demand: "8" }
   }
 });
 
@@ -422,7 +422,7 @@ addPet('robux', {
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-23T18:26:00Z").getTime();
+const fixedTime = new Date("2025-12-23T20:53:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -437,4 +437,5 @@ setInterval(() => {
 
 </script>
 </body>
+
 </html>
