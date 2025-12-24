@@ -328,8 +328,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 150,000",
   updated: now(),
   variants: {
-    normal: { value: "60", change: "+", demand: "8" },
-    rainbow: { value: "270", change: "+", demand: "8" }
+    normal: { value: "80", change: "+", demand: "8" },
+    rainbow: { value: "360", change: "+", demand: "8" }
   }
 });
 
@@ -339,8 +339,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "200", change: "+", demand: "8" },
-    rainbow: { value: "900", change: "+", demand: "9" }
+    normal: { value: "230", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "9" }
   }
 });
 
@@ -350,7 +350,7 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1000", change: "+", demand: "9" },
+    normal: { value: "1150", change: "+", demand: "9" },
     rainbow: { value: "O/C", change: "+", demand: "9" }
   }
 });
@@ -361,8 +361,8 @@ addPet('leaderboard', {
   description: "Awarded to the Top 250 Players on the Leaderboard",
   updated: now(),
   variants: {
-    normal: { value: "620", change: "+", demand: "7" },
-    rainbow: { value: "2800", change: "+", demand: "7" }
+    normal: { value: "650", change: "+", demand: "7" },
+    rainbow: { value: "2925", change: "+", demand: "7" }
   }
 });
 
@@ -372,8 +372,8 @@ addPet('leaderboard', {
   description: "Awarded to the Top 100 Players on the Leaderboard",
   updated: now(),
   variants: {
-    normal: { value: "1310", change: "+", demand: "7" },
-    rainbow: { value: "5900", change: "+", demand: "7" }
+    normal: { value: "1350", change: "+", demand: "7" },
+    rainbow: { value: "6075", change: "+", demand: "7" }
   }
 });
 
@@ -394,8 +394,8 @@ addPet('robux', {
   description: "Found in the Exclusive Chronos Egg. 80% chance",
   updated: now(),
   variants: {
-    normal: { value: "120", change: "+", demand: "7" },
-    rainbow: { value: "540", change: "+", demand: "8" }
+    normal: { value: "130", change: "+", demand: "7" },
+    rainbow: { value: "585", change: "+", demand: "8" }
   }
 });
 
@@ -405,8 +405,8 @@ addPet('robux', {
   description: "Found in the Exclusive Chronos Egg. 20% chance",
   updated: now(),
   variants: {
-    normal: { value: "170", change: "+", demand: "7" },
-    rainbow: { value: "765", change: "+", demand: "8" }
+    normal: { value: "180", change: "+", demand: "7" },
+    rainbow: { value: "810", change: "+", demand: "8" }
   }
 });
 
@@ -416,13 +416,13 @@ addPet('robux', {
   description: "Found in the Exclusive Chronos Egg. 0.1% chance",
   updated: now(),
   variants: {
-    normal: { value: "4.5k", change: "+", demand: "8" },
-    rainbow: { value: "O/C", change: "+", demand: "7" }
+    normal: { value: "5.5k", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "8" }
   }
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-24T13:03:00Z").getTime();
+const fixedTime = new Date("2025-12-24T15:24:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -439,6 +439,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
