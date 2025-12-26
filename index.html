@@ -329,9 +329,9 @@ addPet('mythicals', {
   description: "Found in the Atlantis Egg. Rarity: 1 in 9,091",
   updated: now(),
   variants: {
-    normal: { value: "0.5", change: "-", demand: "5" },
-    gold: { value: "4", change: "-", demand: "6" },   // optional
-    rainbow: { value: "12", change: "-", demand: "6" }
+    normal: { value: "0", change: "-", demand: "2" },
+    gold: { value: "1", change: "-", demand: "3" },   // optional
+    rainbow: { value: "3", change: "-", demand: "3" }
   }
 });
 
@@ -341,9 +341,9 @@ addPet('mythicals', {
   description: "Found in the Christmas Event Egg. Rarity: 1 in 10,000",
   updated: now(),
   variants: {
-    normal: { value: "0.5", change: "-", demand: "5" },
-    gold: { value: "4", change: "-", demand: "6" },   // optional
-    rainbow: { value: "12", change: "-", demand: "6" }
+    normal: { value: "0", change: "-", demand: "2" },
+    gold: { value: "1", change: "-", demand: "3" },   // optional
+    rainbow: { value: "3", change: "-", demand: "3" }
   }
 });
 
@@ -546,7 +546,7 @@ addPet('currentRobux', {
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-26T20:56:00Z").getTime();
+const fixedTime = new Date("2025-12-26T21:41:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -563,3 +563,4 @@ setInterval(() => {
 </body>
 
 </html>
+
