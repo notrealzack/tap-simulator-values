@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Valuelist By NotSpeedGuy and Astarte">
-<meta property="og:description" content="Tap Simulator Values!">
-<meta property="og:image" content="https://media.discordapp.net/attachments/1449741752696045609/1452839133729788015/image.png">
+<meta property="og:title" content="TapValues">
+<meta property="og:description" content="Tap Simulator Valuelist by NotSpeedGuy and Astarte!">
+<meta property="og:image" content="https://i.postimg.cc/76ZQRV6P/Chat-GPT-Image-Dec-27-2025-01-47-45-AM.png">
 <meta property="og:url" content="https://tap-simulator-valuelist.netlify.app/">
 <meta name="theme-color" content="#6f4cff">
 
@@ -61,13 +61,14 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
 </head>
 <body>
 
-<div class="header-note"><div id="last-updated">The #1 ValueList For Tap Simulator!</div></div>
+<div class="header-note"><div id="last-updated">Update: New pet values have been added. Images will be updated soon.</div></div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchSection('limitedSecrets')">Limited Secrets</div>
   <div class="tab" onclick="switchSection('permanentSecrets')">Permanent Secrets</div>
   <div class="tab" onclick="switchSection('leaderboard')">Leaderboard Pets</div>
-  <div class="tab" onclick="switchSection('robux')">Robux Pets</div>
+  <div class="tab" onclick="switchSection('limitedRobux')">Limited Robux Pets</div>
+  <div class="tab" onclick="switchSection('currentRobux')">Current Robux Pets</div>
   <div class="tab" onclick="switchSection('mythicals')">Mythicals / Best Stat Pet</div>
   <div class="tab" onclick="switchSection('about')">About Us</div>
 </div>
@@ -84,9 +85,13 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
   <h2>Leaderboard Pets</h2>
   <div class="pet-grid" id="leaderboard-grid"></div>
 </div>
-<div id="robux" class="section">
-  <h2>Robux Pets</h2>
-  <div class="pet-grid" id="robux-grid"></div>
+<div id="limitedRobux" class="section">
+  <h2>Limited Robux Pets</h2>
+  <div class="pet-grid" id="limitedRobux-grid"></div>
+</div>
+<div id="currentRobux" class="section">
+  <h2>Current Robux Pets</h2>
+  <div class="pet-grid" id="currentRobux-grid"></div>
 </div>
 <div id="mythicals" class="section">
   <h2>Mythicals / Best Stat Pets</h2>
@@ -113,7 +118,15 @@ function switchSection(id) {
   event.target.classList.add('active');
 }
 
-const pets = { limitedSecrets:[], permanentSecrets:[], leaderboard:[], robux:[], mythicals:[] };
+const pets = {
+  limitedSecrets: [],
+  permanentSecrets: [],
+  leaderboard: [],
+  limitedRobux: [],
+  currentRobux: [],
+  mythicals: []
+};
+
 
 function addPet(section, pet) {
   if(!pets[section]) { console.error("Section not found:", section); return; }
@@ -201,7 +214,7 @@ function timeAgo(ts){
 
 addPet('permanentSecrets', {
   name: "Frost Queen",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452790348924457144/queen.png?ex=694d1232&is=694bc0b2&hm=033bac109cca04fc973a5c285476e1133ccb88eb7be99cdb9262c40942fdb713&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/0bQ2B25b/queen.png",
   description: "Rarity: 1 in 100,000",
   updated: now(),
   variants: {
@@ -212,7 +225,7 @@ addPet('permanentSecrets', {
 
 addPet('permanentSecrets', {
   name: "Divine Dragon",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452793068221894700/divine_drag.png?ex=694d14bb&is=694bc33b&hm=ae72d84d3cc40494d218f7687002bc8ebe62bacb68fdb407a7525437af6f6b3f&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/9zcfyYvr/divine-drag.png",
   description: "Rarity: 1 in 500,000",
   updated: now(),
   variants: {
@@ -223,7 +236,7 @@ addPet('permanentSecrets', {
 
 addPet('permanentSecrets', {
   name: "Weeping Angel",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452791368043987044/weeping.png?ex=694d1325&is=694bc1a5&hm=6dba6e739ab635da94abe3ae8b4ea611725a6aab6a4d0860a3ad0d8a7ee0d91b&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/dLxtPPD2/weeping.png",
   description: "Rarity: 1 in 333,333",
   updated: now(),
   variants: {
@@ -234,7 +247,7 @@ addPet('permanentSecrets', {
 
 addPet('permanentSecrets', {
   name: "Sakura Dominator",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452792336894398494/sakura.png?ex=694d140c&is=694bc28c&hm=40d47f995c86dc62d8def8f3f50e766641265170e463304b4a20a3ba1a669433&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/Yh9qsqrV/sakura.png",
   description: "Rarity: 1 in 333,333",
   updated: now(),
   variants: {
@@ -245,7 +258,7 @@ addPet('permanentSecrets', {
 
 addPet('permanentSecrets', {
   name: "Raging Claw",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452793845212381194/claw.png?ex=694d1574&is=694bc3f4&hm=d2f2397465da6a446b728e15413c56b01efc13650817930fe2e3692db889e198&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/NLQ0RkWL/claw.png",
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
@@ -256,7 +269,7 @@ addPet('permanentSecrets', {
 
 addPet('permanentSecrets', {
   name: "Magmasaur",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452780522190147614/magmasaur.png?ex=694d090b&is=694bb78b&hm=aef6d2c46092b85436075b85a1786f6ede1ce356b86fdeba3fd450760fa4638b&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/Hj3kz7gX/magmasaur.png",
   description: "Rarity: 1 in 500,000",
   updated: now(),
   variants: {
@@ -267,7 +280,7 @@ addPet('permanentSecrets', {
 
 addPet('permanentSecrets', {
   name: "Candy God",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452794441915174934/candy.png?ex=694d1602&is=694bc482&hm=62c754e6c8f15d6ee16b72a27d736ec2e9d903a9b3c52d80816ec029ba8dcc01&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/ct14ZdQm/candy.png",
   description: "Rarity: 1 in 250,000",
   updated: now(),
   variants: {
@@ -278,30 +291,30 @@ addPet('permanentSecrets', {
 
 addPet('permanentSecrets', {
   name: "Chocolate Marauder",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452795215114010718/choco.png?ex=694d16ba&is=694bc53a&hm=353f264f2bb9c4d6d6c724f6549427d83bb7d19b4e43f1af6784de71ed7db2c7&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/1VR5Pypc/choco.png",
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "90", change: "-", demand: "3" },
-    rainbow: { value: "400", change: "-", demand: "4" }
+    normal: { value: "80", change: "-", demand: "3" },
+    rainbow: { value: "360", change: "-", demand: "4" }
   }
 });
 
 addPet('permanentSecrets', {
   name: "Orca Dominator",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452797995702685847/orca.png?ex=694d1951&is=694bc7d1&hm=1222a19f1b7b091b7085ef50651f2c791d5d828793a1677d990368fe4055f4e5&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/pykLCnHC/orca.png",
   description: "Rarity: 1 in 250,000",
   updated: now(),
   variants: {
-    normal: { value: "50", change: "-", demand: "4" },
-    rainbow: { value: "225", change: "-", demand: "4" }
+    normal: { value: "45", change: "-", demand: "3" },
+    rainbow: { value: "200", change: "-", demand: "4" }
   }
 });
 
 
 addPet('permanentSecrets', {
   name: "King Kraken",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452798611556401304/kraken.png?ex=694d19e4&is=694bc864&hm=a4c75dcf069a15df49159e554677b5db059779d651383964317322ebaec59f05&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/c6TLh8SY/kraken.png",
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
@@ -312,117 +325,228 @@ addPet('permanentSecrets', {
 
 addPet('mythicals', {
   name: "Sharkie",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452814906729693255/image.png?ex=694d2911&is=694bd791&hm=8a15a3a02a9a160aa5f87bdb2eb53409e8918039b13312b510616df65ae69d84&=&format=webp&quality=lossless",
-  description: "Found in the Atlantis Egg. Rarity: 1 in 9091",
+  img: "https://i.postimg.cc/mkCcYDhT/image.png",
+  description: "Found in the Atlantis Egg. Rarity: 1 in 9,091",
   updated: now(),
   variants: {
-    normal: { value: "2", change: "+", demand: "7" },
-    gold: { value: "10", change: "+", demand: "8" },   // optional
-    rainbow: { value: "15", change: "+", demand: "9" }
+    normal: { value: "0.5", change: "-", demand: "5" },
+    gold: { value: "4", change: "-", demand: "6" },   // optional
+    rainbow: { value: "12", change: "-", demand: "6" }
+  }
+});
+
+addPet('mythicals', {
+  name: "Nutcracker",
+  img: "https://i.postimg.cc/sXztHw4H/nut.png",
+  description: "Found in the Christmas Event Egg. Rarity: 1 in 10,000",
+  updated: now(),
+  variants: {
+    normal: { value: "0.5", change: "-", demand: "5" },
+    gold: { value: "4", change: "-", demand: "6" },   // optional
+    rainbow: { value: "12", change: "-", demand: "6" }
   }
 });
 
 addPet('limitedSecrets', {
   name: "Frosty Snowman",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452801170937614457/snowman.png?ex=694d1c46&is=694bcac6&hm=ff39fc12c567926c56a06dac4a54145e3d3340bef079d4e7140ff7a4a16cd15c&=&format=webp&quality=lossless",
-  description: "Found in the Limited 5M Egg. Rarity: 1 in 150,000",
+  img: "https://i.postimg.cc/dLxtPPD1/snowman.png",
+  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 150,000",
   updated: now(),
   variants: {
-    normal: { value: "80", change: "+", demand: "8" },
-    rainbow: { value: "360", change: "+", demand: "8" }
+    normal: { value: "110", change: "+", demand: "7" },
+    rainbow: { value: "495", change: "+", demand: "8" }
   }
 });
 
 addPet('limitedSecrets', {
   name: "5M North Star",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452800632938561608/star.png?ex=694d1bc6&is=694bca46&hm=f7368821c0886a3133af4aa15354e971fe8d43e042b7ae36ba3c0be2bab7c258&=&format=webp&quality=lossless",
-  description: "Found in the Limited 5M Egg. Rarity: 1 in 500,000",
+  img: "https://i.postimg.cc/zVcXZZ3h/star.png",
+  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "230", change: "+", demand: "8" },
-    rainbow: { value: "O/C", change: "+", demand: "9" }
+    normal: { value: "350", change: "+", demand: "8" },
+    rainbow: { value: "1550", change: "+", demand: "8" }
   }
 });
 
 addPet('limitedSecrets', {
   name: "5M Frost Monarch",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452800110219104327/monarch.png?ex=694d1b49&is=694bc9c9&hm=d76d0c04d7d62681613af3e30ab724caa4716273682831452cb20f24d817764d&=&format=webp&quality=lossless",
-  description: "Found in the Limited 5M Egg. Rarity: 1 in 1,500,000",
+  img: "https://i.postimg.cc/8swz4rSY/monarch.png",
+  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1150", change: "+", demand: "9" },
+    normal: { value: "1450", change: "+", demand: "9" },
     rainbow: { value: "O/C", change: "+", demand: "9" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "Frost Spirit",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 250,000",
+  updated: now(),
+  variants: {
+    normal: { value: "65", change: "+", demand: "7" },
+    rainbow: { value: "290", change: "+", demand: "7" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "Christmas Tree",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
+  updated: now(),
+  variants: {
+    normal: { value: "130", change: "+", demand: "7" },
+    rainbow: { value: "580", change: "+", demand: "8" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "Gilded Seraphim",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
+  updated: now(),
+  variants: {
+    normal: { value: "1000", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "8" }
   }
 });
 
 addPet('leaderboard', {
   name: "Top 250",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452802234302595253/250.png?ex=694d1d44&is=694bcbc4&hm=5d61430b472b8247eb8294ce432773dba3416cbdf2e8a84dbdbd51f568d54af1&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/5Q9N1fww/250.png",
   description: "Awarded to the Top 250 Players on the Leaderboard",
   updated: now(),
   variants: {
-    normal: { value: "650", change: "+", demand: "7" },
-    rainbow: { value: "2925", change: "+", demand: "7" }
+    normal: { value: "700", change: "+", demand: "7" },
+    rainbow: { value: "3150", change: "+", demand: "8" }
   }
 });
 
 addPet('leaderboard', {
   name: "Top 100",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452803773255778466/100.png?ex=694d1eb3&is=694bcd33&hm=7de2f50cbd92c0e5c2bdb9fb25534437a09c16def271ddc048719a172d2bfafa&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/XBN73nw9/100.png",
   description: "Awarded to the Top 100 Players on the Leaderboard",
   updated: now(),
   variants: {
-    normal: { value: "1350", change: "+", demand: "7" },
-    rainbow: { value: "6075", change: "+", demand: "7" }
+    normal: { value: "1400", change: "+", demand: "7" },
+    rainbow: { value: "6300", change: "+", demand: "8" }
   }
 });
 
 addPet('leaderboard', {
   name: "Top 10",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452804511885426740/10.png?ex=694d1f63&is=694bcde3&hm=22917d827677c44097e7c1a8d031687b747c8416edb28714b2ace2c604654243&=&format=webp&quality=lossless",
+  img: "https://i.postimg.cc/zbFX9yRD/10.png",
   description: "Awarded to the Top 10 Players on the Leaderboard",
   updated: now(),
   variants: {
     normal: { value: "18500", change: "+", demand: "9" },
-    rainbow: { value: "O/C", change: "+", demand: "8" }
+    rainbow: { value: "O/C", change: "+", demand: "9" }
   }
 });
 
-addPet('robux', {
+addPet('limitedRobux', {
   name: "Kairos",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452806372696658062/kairos.png?ex=694d211f&is=694bcf9f&hm=1bdf3ae9ca08872043e5f5c3ce38d9d953320af5b3abf64f17ccd0c0f31293ce&=&format=webp&quality=lossless",
-  description: "Found in the Exclusive Chronos Egg. 80% chance",
+  img: "https://i.postimg.cc/XXnv9kTC/kairos.png",
+  description: "Found in the Limited Exclusive Chronos Egg. 80% chance",
   updated: now(),
   variants: {
-    normal: { value: "130", change: "+", demand: "7" },
-    rainbow: { value: "585", change: "+", demand: "8" }
+    normal: { value: "135", change: "+", demand: "7" },
+    rainbow: { value: "600", change: "+", demand: "8" }
   }
 });
 
-addPet('robux', {
+addPet('limitedRobux', {
   name: "Paradox",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452807752568279120/paradox.png?ex=694d2268&is=694bd0e8&hm=e697eca34b9bc1edabd44d6bc05b08f3f6bc1b489b6f1ace493b020915e070b9&=&format=webp&quality=lossless",
-  description: "Found in the Exclusive Chronos Egg. 20% chance",
+  img: "https://i.postimg.cc/RqGZdnBy/paradox.png",
+  description: "Found in the Limited Exclusive Chronos Egg. 19.9% chance",
   updated: now(),
   variants: {
-    normal: { value: "180", change: "+", demand: "7" },
-    rainbow: { value: "810", change: "+", demand: "8" }
+    normal: { value: "185", change: "+", demand: "7" },
+    rainbow: { value: "830", change: "+", demand: "8" }
   }
 });
 
-addPet('robux', {
+addPet('limitedRobux', {
   name: "Chronos",
-  img: "https://media.discordapp.net/attachments/1449741752696045609/1452808287400755412/chronos.png?ex=694d22e7&is=694bd167&hm=034475ff410eac27ae55b7b8ca1b264f81e49f512f6e88e090e44cd30be2d7a3&=&format=webp&quality=lossless",
-  description: "Found in the Exclusive Chronos Egg. 0.1% chance",
+  img: "https://i.postimg.cc/SjmKcfwQ/chronos.png",
+  description: "Found in the Limited Exclusive Chronos Egg. 0.1% chance",
   updated: now(),
   variants: {
-    normal: { value: "5.5k", change: "+", demand: "8" },
+    normal: { value: "8.5k", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "9" }
+  }
+});
+
+addPet('currentRobux', {
+  name: "Gift Mimic",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Limited Exclusive Krampus Egg",
+  updated: now(),
+  variants: {
+    normal: { value: "70", change: "+", demand: "6" },
+    rainbow: { value: "300", change: "+", demand: "6" }
+  }
+});
+
+addPet('currentRobux', {
+  name: "Snow Thief",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Limited Exclusive Krampus Egg",
+  updated: now(),
+  variants: {
+    normal: { value: "80", change: "+", demand: "6" },
+    rainbow: { value: "350", change: "+", demand: "6" }
+  }
+});
+
+addPet('currentRobux', {
+  name: "Evil Snowman",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Limited Exclusive Krampus Egg",
+  updated: now(),
+  variants: {
+    normal: { value: "100", change: "+", demand: "6" },
+    rainbow: { value: "450", change: "+", demand: "7" }
+  }
+});
+
+addPet('currentRobux', {
+  name: "Krampus",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Limited Exclusive Krampus Egg",
+  updated: now(),
+  variants: {
+    normal: { value: "1700", change: "+", demand: "7" },
     rainbow: { value: "O/C", change: "+", demand: "8" }
+  }
+});
+
+addPet('currentRobux', {
+  name: "Celestial Candycane",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Limited Santa's OP Gift Event in Store",
+  updated: now(),
+  variants: {
+    normal: { value: "750", change: "+", demand: "7" },
+    rainbow: { value: "O/C", change: "+", demand: "7" }
+  }
+});
+
+addPet('currentRobux', {
+  name: "Hooded Krampus",
+  img: "https://i.postimg.cc/rsVGHtbT/eroor.jpg",
+  description: "Found in the Christmas Spinwheel",
+  updated: now(),
+  variants: {
+    normal: { value: "450", change: "+", demand: "7" },
+    rainbow: { value: "O/C", change: "+", demand: "7" }
   }
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-24T15:24:00Z").getTime();
+const fixedTime = new Date("2025-12-26T20:56:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -439,9 +563,3 @@ setInterval(() => {
 </body>
 
 </html>
-
-
-
-
-
-
