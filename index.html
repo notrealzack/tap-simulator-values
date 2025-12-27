@@ -17,7 +17,22 @@
 <meta name="theme-color" content="#6f4cff">
 
 <style>
-body { margin:0; background:#121212; color:#fff; font-family:"Inter",sans-serif; }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+
+  /* Cosmic themed background */
+  background:
+    radial-gradient(circle at 20% 20%, rgba(180,120,255,0.15), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(120,80,255,0.12), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(200,120,255,0.10), transparent 50%),
+    linear-gradient(180deg, #0a0712 0%, #120a1f 40%, #09050f 100%);
+
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px; }
 .header-note { text-align:center; padding:12px; font-size:14px; color:#9e9e9e; background:#161616; border-bottom:1px solid #222; }
 .tabs { display:flex; justify-content:center; flex-wrap:wrap; background:#171717; padding:10px; border-bottom:1px solid #222; }
@@ -57,11 +72,49 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
 .tooltip { position:absolute; top:6px; right:6px; width:18px; height:18px; background:#000; border-radius:50%; color:#fff; font-size:12px; line-height:18px; text-align:center; cursor:pointer; }
 .tooltip:hover .tooltip-text { visibility:visible; opacity:1; }
 .tooltip-text { visibility:hidden; opacity:0; width:180px; background-color:#222; color:#fff; text-align:left; border-radius:6px; padding:6px; position:absolute; z-index:10; top:24px; right:0; font-size:12px; line-height:1.4; transition:opacity 0.2s; }
+
+.header-note,
+.tabs {
+  background: rgba(20, 12, 35, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(140, 90, 255, 0.15);
+}
+
+.tab {
+  background: rgba(60, 40, 100, 0.6);
+  border: 1px solid rgba(140, 90, 255, 0.15);
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #6f4cff, #9b6cff);
+  box-shadow: 0 0 14px rgba(140, 90, 255, 0.5);
+}
+
+.pet-card {
+  background: rgba(25, 15, 45, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(140, 90, 255, 0.18);
+  box-shadow:
+    0 0 18px rgba(140, 90, 255, 0.12),
+    inset 0 0 12px rgba(180, 120, 255, 0.05);
+}
+
+.pet-card:hover {
+  box-shadow:
+    0 0 30px rgba(160, 110, 255, 0.35),
+    inset 0 0 18px rgba(200, 140, 255, 0.08);
+}
+
+h2 {
+  text-shadow: 0 0 12px rgba(160, 120, 255, 0.6);
+}
+
 </style>
 </head>
-<body>
+</body>
 
-<div class="header-note"><div id="last-updated">Update: New pet values have been added. DM NotSpeedGuy for any suggestions!.</div></div>
+
+<div class="header-note"><div id="last-updated">Update: Space World pets currently lack fixed values due to their recent release and low serial numbers. Values may fluctuate, and we will be updating them soon.</div></div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchSection('limitedSecrets')">Limited Secrets</div>
@@ -321,32 +374,42 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "240", change: "-", demand: "4" },
-    rainbow: { value: "1080", change: "-", demand: "4" }
+    normal: { value: "150", change: "-", demand: "4" },
+    rainbow: { value: "675", change: "-", demand: "5" }
+  }
+});
+
+addPet('permanentSecrets', {
+  name: "Luminary Star",
+  img: "https://i.postimg.cc/GByD2ZpT/luminary-star-watermarked.png",
+  description: "Rarity: 1 in 250,000",
+  updated: now(),
+  variants: {
+    normal: { value: "200", change: "-", demand: "7" },
+    rainbow: { value: "900", change: "-", demand: "8" }
+  }
+});
+
+addPet('permanentSecrets', {
+  name: "Cosmic Chaos",
+  img: "https://i.postimg.cc/3k6p3KYs/cosmic-star-watermarked.png",
+  description: "Rarity: 1 in 1,000,000",
+  updated: now(),
+  variants: {
+    normal: { value: "800", change: "-", demand: "8" },
+    rainbow: { value: "N/C", change: "-", demand: "8" }
   }
 });
 
 addPet('mythicals', {
-  name: "Sharkie",
-  img: "https://i.postimg.cc/mkCcYDhT/image.png",
-  description: "Found in the Atlantis Egg. Rarity: 1 in 9,091",
+  name: "UFO Alien",
+  img: "https://i.postimg.cc/5NPq31B2/mythical-new.png",
+  description: "Found in the Space Egg. Rarity: 1 in 9,091",
   updated: now(),
   variants: {
-    normal: { value: "0", change: "-", demand: "2" },
-    gold: { value: "2", change: "-", demand: "3" },   // optional
-    rainbow: { value: "5", change: "-", demand: "3" }
-  }
-});
-
-addPet('mythicals', {
-  name: "Nutcracker",
-  img: "https://i.postimg.cc/sXztHw4H/nut.png",
-  description: "Found in the Christmas Event Egg. Rarity: 1 in 10,000",
-  updated: now(),
-  variants: {
-    normal: { value: "0", change: "-", demand: "2" },
-    gold: { value: "2", change: "-", demand: "3" },   // optional
-    rainbow: { value: "5", change: "-", demand: "3" }
+    normal: { value: "1", change: "-", demand: "7" },
+    gold: { value: "4", change: "-", demand: "8" },   // optional
+    rainbow: { value: "8", change: "-", demand: "8" }
   }
 });
 
@@ -357,7 +420,7 @@ addPet('limitedSecrets', {
   updated: now(),
   variants: {
     normal: { value: "110", change: "+", demand: "7" },
-    rainbow: { value: "495", change: "+", demand: "8" }
+    rainbow: { value: "500", change: "+", demand: "8" }
   }
 });
 
@@ -379,7 +442,7 @@ addPet('limitedSecrets', {
   updated: now(),
   variants: {
     normal: { value: "1450", change: "+", demand: "9" },
-    rainbow: { value: "O/C", change: "+", demand: "9" }
+    rainbow: { value: "6500", change: "+", demand: "9" }
   }
 });
 
@@ -400,8 +463,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "150", change: "+", demand: "7" },
-    rainbow: { value: "675", change: "+", demand: "8" }
+    normal: { value: "170", change: "+", demand: "7" },
+    rainbow: { value: "765", change: "+", demand: "8" }
   }
 });
 
@@ -411,8 +474,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
   updated: now(),
   variants: {
-    normal: { value: "1000", change: "+", demand: "8" },
-    rainbow: { value: "O/C", change: "+", demand: "8" }
+    normal: { value: "1050", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "9" }
   }
 });
 
@@ -455,8 +518,8 @@ addPet('limitedRobux', {
   description: "Found in the Limited Exclusive Chronos Egg. 80% chance",
   updated: now(),
   variants: {
-    normal: { value: "135", change: "+", demand: "7" },
-    rainbow: { value: "600", change: "+", demand: "8" }
+    normal: { value: "140", change: "+", demand: "7" },
+    rainbow: { value: "630", change: "+", demand: "8" }
   }
 });
 
@@ -466,8 +529,8 @@ addPet('limitedRobux', {
   description: "Found in the Limited Exclusive Chronos Egg. 19.9% chance",
   updated: now(),
   variants: {
-    normal: { value: "185", change: "+", demand: "7" },
-    rainbow: { value: "830", change: "+", demand: "8" }
+    normal: { value: "190", change: "+", demand: "7" },
+    rainbow: { value: "850", change: "+", demand: "8" }
   }
 });
 
@@ -477,7 +540,7 @@ addPet('limitedRobux', {
   description: "Found in the Limited Exclusive Chronos Egg. 0.1% chance",
   updated: now(),
   variants: {
-    normal: { value: "8.5k", change: "+", demand: "8" },
+    normal: { value: "8.75k", change: "+", demand: "8" },
     rainbow: { value: "O/C", change: "+", demand: "9" }
   }
 });
@@ -488,8 +551,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "70", change: "+", demand: "6" },
-    rainbow: { value: "300", change: "+", demand: "6" }
+    normal: { value: "60", change: "+", demand: "6" },
+    rainbow: { value: "270", change: "+", demand: "6" }
   }
 });
 
@@ -499,8 +562,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "80", change: "+", demand: "6" },
-    rainbow: { value: "350", change: "+", demand: "6" }
+    normal: { value: "70", change: "+", demand: "6" },
+    rainbow: { value: "310", change: "+", demand: "6" }
   }
 });
 
@@ -521,7 +584,7 @@ addPet('currentRobux', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "1700", change: "+", demand: "7" },
+    normal: { value: "1850", change: "+", demand: "7" },
     rainbow: { value: "O/C", change: "+", demand: "8" }
   }
 });
@@ -532,8 +595,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Santa's OP Gift Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "750", change: "+", demand: "7" },
-    rainbow: { value: "O/C", change: "+", demand: "7" }
+    normal: { value: "800", change: "+", demand: "7" },
+    rainbow: { value: "O/C", change: "+", demand: "8" }
   }
 });
 
@@ -543,13 +606,13 @@ addPet('currentRobux', {
   description: "Found in the Christmas Spinwheel",
   updated: now(),
   variants: {
-    normal: { value: "450", change: "+", demand: "7" },
-    rainbow: { value: "O/C", change: "+", demand: "7" }
+    normal: { value: "550", change: "+", demand: "7" },
+    rainbow: { value: "O/C", change: "+", demand: "8" }
   }
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-27T10:41:00Z").getTime();
+const fixedTime = new Date("2025-12-27T21:45:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -566,6 +629,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
