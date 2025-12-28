@@ -438,7 +438,7 @@ addPet('limitedSecrets', {
   updated: now(),
   variants: {
     normal: { value: "350", change: "+", demand: "8" },
-    rainbow: { value: "1550", change: "+", demand: "8" }
+    rainbow: { value: "1350", change: "+", demand: "8" }
   }
 });
 
@@ -619,7 +619,7 @@ addPet('currentRobux', {
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-28T11:00:00Z").getTime();
+const fixedTime = new Date("2025-12-28T11:27:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -636,6 +636,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
