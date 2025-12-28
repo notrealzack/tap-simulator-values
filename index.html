@@ -392,8 +392,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 250,000",
   updated: now(),
   variants: {
-    normal: { value: "120", change: "-", demand: "7" },
-    rainbow: { value: "540", change: "-", demand: "8" }
+    normal: { value: "150", change: "+", demand: "7" },
+    rainbow: { value: "680", change: "+", demand: "8" }
   }
 });
 
@@ -403,8 +403,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "500", change: "-", demand: "8" },
-    rainbow: { value: "2250", change: "-", demand: "8" }
+    normal: { value: "700", change: "+", demand: "8" },
+    rainbow: { value: "3150", change: "+", demand: "8" }
   }
 });
 
@@ -591,8 +591,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "1850", change: "+", demand: "7" },
-    rainbow: { value: "8000", change: "+", demand: "8" }
+    normal: { value: "2000", change: "+", demand: "7" },
+    rainbow: { value: "9000", change: "+", demand: "8" }
   }
 });
 
@@ -619,7 +619,7 @@ addPet('currentRobux', {
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-28T15:28:00Z").getTime();
+const fixedTime = new Date("2025-12-28T19:01:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -636,6 +636,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
