@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TapValues</title>
 
+<link rel="icon" type="image/png" sizes="32x32"
+      href="https://i.postimg.cc/76ZQRV6P/Chat-GPT-Image-Dec-27-2025-01-47-45-AM.png">
+
+<link rel="apple-touch-icon"
+      href="https://i.postimg.cc/76ZQRV6P/Chat-GPT-Image-Dec-27-2025-01-47-45-AM.png">
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -75,10 +82,10 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
 
 .header-note,
 .tabs {
-  background: rgba(20, 12, 35, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(20, 12, 35, 0.95); /* more solid = sharper text */
   border-bottom: 1px solid rgba(140, 90, 255, 0.15);
 }
+
 
 .tab {
   background: rgba(60, 40, 100, 0.6);
@@ -91,13 +98,13 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
 }
 
 .pet-card {
-  background: rgba(25, 15, 45, 0.75);
-  backdrop-filter: blur(10px);
+  background: rgba(25, 15, 45, 0.92); /* solid for sharp text */
   border: 1px solid rgba(140, 90, 255, 0.18);
   box-shadow:
     0 0 18px rgba(140, 90, 255, 0.12),
     inset 0 0 12px rgba(180, 120, 255, 0.05);
 }
+
 
 .pet-card:hover {
   box-shadow:
@@ -114,7 +121,7 @@ h2 {
 </body>
 
 
-<div class="header-note"><div id="last-updated">Update: Space World pets currently lack fixed values due to their recent release and low serial numbers. Values may fluctuate, and we will be updating them soon.</div></div>
+<div class="header-note"><div id="last-updated">Update: The Limited Christmas Event Egg will be leaving in 2-3 days.</div></div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchSection('limitedSecrets')">Limited Secrets</div>
@@ -612,7 +619,7 @@ addPet('currentRobux', {
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-28T10:03:00Z").getTime();
+const fixedTime = new Date("2025-12-28T10:35:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -629,6 +636,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
