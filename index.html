@@ -106,32 +106,108 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
 }
 
 
-.pet-card:hover {
-  box-shadow:
-    0 0 30px rgba(160, 110, 255, 0.35),
-    inset 0 0 18px rgba(200, 140, 255, 0.08);
+/* Apply hover effects on mobile tap via active */
+@media (hover: none) {
+  .pet-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+  
+  .pet-card:active {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:
+      0 0 40px rgba(160, 110, 255, 0.35),
+      0 0 20px rgba(200, 140, 255, 0.25),
+      inset 0 0 18px rgba(200, 140, 255, 0.08);
+    filter: brightness(1.05);
+  }
 }
+
+
 
 h2 {
   text-shadow: 0 0 12px rgba(160, 120, 255, 0.6);
 }
 
+.exclusive-section {
+  display: none;
+}
+
+.exclusive-section.active {
+  display: block;
+}
+
+.exclusive-note {
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #cfc3ff;
+
+  background: rgba(20, 12, 35, 0.95);
+  border: 1px solid rgba(140, 90, 255, 0.18);
+  border-radius: 10px;
+
+  box-shadow: 0 0 18px rgba(140, 90, 255, 0.18);
+}
+
+/* ==============================
+   Mobile Responsiveness
+============================== */
+@media (max-width: 768px) {
+  .pet-grid {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .pet-card {
+    width: 45%; /* 2 cards per row */
+    padding: 12px;
+  }
+
+  .pet-name { font-size: 14px; }
+  .pet-row { font-size: 12px; }
+  .value-number { font-size: 14px; }
+  .change-up, .change-down { font-size: 9px; padding: 2px 4px; }
+  h2 { font-size: 20px; }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tab {
+    flex: 1 1 45%; /* easier to tap */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 13px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .pet-card {
+    width: 90%; /* full width */
+    padding: 10px;
+  }
+}
+
 </style>
 </head>
-</body>
+<body>
 
 
 <div class="header-note"><div id="last-updated">Update: The Limited Christmas Event Egg will be leaving in 2-3 days. Leaderboard Pets will be switched out the upcoming week :)</div></div>
 
 <div class="tabs">
-  <div class="tab active" onclick="switchSection('limitedSecrets')">Limited Secrets</div>
-  <div class="tab" onclick="switchSection('permanentSecrets')">Permanent Secrets</div>
-  <div class="tab" onclick="switchSection('leaderboard')">Leaderboard Pets</div>
-  <div class="tab" onclick="switchSection('limitedRobux')">Limited Robux Pets</div>
-  <div class="tab" onclick="switchSection('currentRobux')">Current Robux Pets</div>
-  <div class="tab" onclick="switchSection('mythicals')">Mythicals / Best Stat Pet</div>
-  <div class="tab" onclick="switchSection('about')">About Us</div>
+  <div class="tab active" onclick="switchSection(event, 'limitedSecrets')">Limited Secrets</div>
+  <div class="tab" onclick="switchSection(event, 'permanentSecrets')">Permanent Secrets</div>
+  <div class="tab" onclick="switchSection(event, 'leaderboard')">Leaderboard Pets</div>
+  <div class="tab" onclick="switchSection(event, 'currentRobux')">Random Event Pets</div>
+  <div class="tab" onclick="switchSection(event, 'mythicals')">Mythicals / Best Stat Pets</div>
+  <div class="tab" onclick="switchSection(event, 'exclusiveEgg')">Exclusive Eggs</div>
+  <div class="tab" onclick="switchSection(event, 'about')">About Us</div>
 </div>
+
 
 <div id="limitedSecrets" class="section active">
   <h2>Limited Secrets</h2>
@@ -145,18 +221,51 @@ h2 {
   <h2>Leaderboard Pets</h2>
   <div class="pet-grid" id="leaderboard-grid"></div>
 </div>
-<div id="limitedRobux" class="section">
-  <h2>Limited Robux Pets</h2>
-  <div class="pet-grid" id="limitedRobux-grid"></div>
-</div>
 <div id="currentRobux" class="section">
-  <h2>Current Robux Pets</h2>
+  <h2>Random Event Pets</h2>
   <div class="pet-grid" id="currentRobux-grid"></div>
 </div>
 <div id="mythicals" class="section">
   <h2>Mythicals / Best Stat Pets</h2>
   <div class="pet-grid" id="mythicals-grid"></div>
 </div>
+<div id="exclusiveEgg" class="section">
+
+
+<div class="exclusive-note">
+ Note: Eggs are listed in release order, starting with Exclusive Egg #1 and progressing to the most recently added.
+</div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchExclusive(event, 'egg1')">
+      #1
+    </div>
+    <div class="tab" onclick="switchExclusive(event, 'egg2')">
+      #2
+    </div>
+    <div class="tab" onclick="switchExclusive(event, 'egg3')">
+      Soon
+    </div>
+  </div>
+
+  <!-- TITLE LIKE OTHER SECTIONS -->
+  <h2 id="egg1-title">Chronos Egg</h2>
+
+  <div id="egg1" class="exclusive-section active">
+    <div class="pet-grid" id="exclusiveEgg1-grid"></div>
+  </div>
+
+  <h2 id="egg2-title" style="display:none;">Krampus Egg</h2>
+  <div id="egg2" class="exclusive-section">
+    <div class="pet-grid" id="exclusiveEgg2-grid"></div>
+  </div>
+
+  <h2 id="egg3-title" style="display:none;">Soon</h2>
+  <div id="egg3" class="exclusive-section">
+    <div class="pet-grid" id="exclusiveEgg3-grid"></div>
+  </div>
+</div>
+
 <div id="about" class="section">
   <h2>About Us</h2>
   <p style="text-align:center; color:#d5d5d5; font-size:15px; line-height:1.6;">
@@ -174,11 +283,36 @@ h2 {
 
 
 <script>
-function switchSection(id) {
+function switchSection(event, id) {
+  // Hide all main sections
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+
+  // Update top-level tab active state
+  document.querySelectorAll('.tabs > .tab').forEach(t => t.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
+
+
+
+function switchExclusive(e, id) {
+  document.querySelectorAll('.exclusive-section').forEach(s => {
+    s.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('#exclusiveEgg h2[id$="-title"]').forEach(t => {
+    t.style.display = 'none';
+  });
+
+  document.getElementById(id + '-title').style.display = 'block';
+
+  e.currentTarget.parentElement
+    .querySelectorAll('.tab')
+    .forEach(t => t.classList.remove('active'));
+
+  e.currentTarget.classList.add('active');
 }
 
 const pets = {
@@ -187,15 +321,22 @@ const pets = {
   leaderboard: [],
   limitedRobux: [],
   currentRobux: [],
-  mythicals: []
+  mythicals: [],
+
+  exclusiveEgg1: [],
+  exclusiveEgg2: [],
+  exclusiveEgg3: []
 };
 
 
+
 function addPet(section, pet) {
+  console.log("Adding pet to section:", section, pet);
   if(!pets[section]) { console.error("Section not found:", section); return; }
   pets[section].push(pet);
   renderPetsForSection(section);
 }
+
 
 function getDemandClass(value) {
   if(value>=1 && value<=3) return 'demand-red';
@@ -254,8 +395,14 @@ function renderPetsForSection(section){
   });
 }
 
-function renderAllPets(){ for(let s in pets) renderPetsForSection(s); }
-renderAllPets();
+function renderAllPets(){
+  for(let section in pets){
+    if(document.getElementById(`${section}-grid`)){
+      renderPetsForSection(section);
+    }
+  }
+}
+
 
 function now(){ return Date.now(); }
 function timeAgo(ts){
@@ -274,6 +421,72 @@ function timeAgo(ts){
 /* ===============================
    ADD PETS BELOW
 =============================== */
+
+addPet('limitedSecrets', {
+  name: "Frosty Snowman",
+  img: "https://i.postimg.cc/dLxtPPD1/snowman.png",
+  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 150,000",
+  updated: now(),
+  variants: {
+    normal: { value: "110", change: "+", demand: "7" },
+    rainbow: { value: "500", change: "+", demand: "8" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "5M North Star",
+  img: "https://i.postimg.cc/zVcXZZ3h/star.png",
+  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 500,000",
+  updated: now(),
+  variants: {
+    normal: { value: "350", change: "+", demand: "8" },
+    rainbow: { value: "1350", change: "+", demand: "8" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "5M Frost Monarch",
+  img: "https://i.postimg.cc/8swz4rSY/monarch.png",
+  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 1,500,000",
+  updated: now(),
+  variants: {
+    normal: { value: "1450", change: "+", demand: "8" },
+    rainbow: { value: "7000", change: "+", demand: "9" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "Frost Spirit",
+  img: "https://i.postimg.cc/56cCfdX9/frost-spitirrrr.png",
+  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 250,000",
+  updated: now(),
+  variants: {
+    normal: { value: "60", change: "-", demand: "7" },
+    rainbow: { value: "270", change: "-", demand: "7" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "Christmas Tree",
+  img: "https://i.postimg.cc/ct3tfT55/christmas-tree.png",
+  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
+  updated: now(),
+  variants: {
+    normal: { value: "120", change: "-", demand: "7" },
+    rainbow: { value: "540", change: "-", demand: "8" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "Gilded Seraphim",
+  img: "https://i.postimg.cc/8jhr5KvM/seraphim.png",
+  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
+  updated: now(),
+  variants: {
+    normal: { value: "900", change: "-", demand: "8" },
+    rainbow: { value: "4000", change: "-", demand: "9" }
+  }
+});
 
 addPet('permanentSecrets', {
   name: "Frost Queen",
@@ -408,84 +621,6 @@ addPet('permanentSecrets', {
   }
 });
 
-addPet('mythicals', {
-  name: "UFO Alien",
-  img: "https://i.postimg.cc/5NPq31B2/mythical-new.png",
-  description: "Found in the Space Egg. Rarity: 1 in 9,091",
-  updated: now(),
-  variants: {
-    normal: { value: "1", change: "-", demand: "7" },
-    gold: { value: "4", change: "-", demand: "8" },   // optional
-    rainbow: { value: "7", change: "-", demand: "8" }
-  }
-});
-
-addPet('limitedSecrets', {
-  name: "Frosty Snowman",
-  img: "https://i.postimg.cc/dLxtPPD1/snowman.png",
-  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 150,000",
-  updated: now(),
-  variants: {
-    normal: { value: "110", change: "+", demand: "7" },
-    rainbow: { value: "500", change: "+", demand: "8" }
-  }
-});
-
-addPet('limitedSecrets', {
-  name: "5M North Star",
-  img: "https://i.postimg.cc/zVcXZZ3h/star.png",
-  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 500,000",
-  updated: now(),
-  variants: {
-    normal: { value: "350", change: "+", demand: "8" },
-    rainbow: { value: "1350", change: "+", demand: "8" }
-  }
-});
-
-addPet('limitedSecrets', {
-  name: "5M Frost Monarch",
-  img: "https://i.postimg.cc/8swz4rSY/monarch.png",
-  description: "Found in the Limited 5M Event Egg. Rarity: 1 in 1,500,000",
-  updated: now(),
-  variants: {
-    normal: { value: "1450", change: "+", demand: "8" },
-    rainbow: { value: "7000", change: "+", demand: "9" }
-  }
-});
-
-addPet('limitedSecrets', {
-  name: "Frost Spirit",
-  img: "https://i.postimg.cc/56cCfdX9/frost-spitirrrr.png",
-  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 250,000",
-  updated: now(),
-  variants: {
-    normal: { value: "60", change: "-", demand: "7" },
-    rainbow: { value: "270", change: "-", demand: "7" }
-  }
-});
-
-addPet('limitedSecrets', {
-  name: "Christmas Tree",
-  img: "https://i.postimg.cc/ct3tfT55/christmas-tree.png",
-  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
-  updated: now(),
-  variants: {
-    normal: { value: "120", change: "-", demand: "7" },
-    rainbow: { value: "540", change: "-", demand: "8" }
-  }
-});
-
-addPet('limitedSecrets', {
-  name: "Gilded Seraphim",
-  img: "https://i.postimg.cc/8jhr5KvM/seraphim.png",
-  description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
-  updated: now(),
-  variants: {
-    normal: { value: "900", change: "-", demand: "8" },
-    rainbow: { value: "4000", change: "-", demand: "9" }
-  }
-});
-
 addPet('leaderboard', {
   name: "Top 250",
   img: "https://i.postimg.cc/5Q9N1fww/250.png",
@@ -519,83 +654,6 @@ addPet('leaderboard', {
   }
 });
 
-addPet('limitedRobux', {
-  name: "Kairos",
-  img: "https://i.postimg.cc/XXnv9kTC/kairos.png",
-  description: "Found in the Limited Exclusive Chronos Egg. 80% chance",
-  updated: now(),
-  variants: {
-    normal: { value: "110", change: "+", demand: "7" },
-    rainbow: { value: "350", change: "+", demand: "7" }
-  }
-});
-
-addPet('limitedRobux', {
-  name: "Paradox",
-  img: "https://i.postimg.cc/RqGZdnBy/paradox.png",
-  description: "Found in the Limited Exclusive Chronos Egg. 19.9% chance",
-  updated: now(),
-  variants: {
-    normal: { value: "180", change: "+", demand: "7" },
-    rainbow: { value: "750", change: "+", demand: "7" }
-  }
-});
-
-addPet('limitedRobux', {
-  name: "Chronos",
-  img: "https://i.postimg.cc/SjmKcfwQ/chronos.png",
-  description: "Found in the Limited Exclusive Chronos Egg. 0.1% chance. 36 exist",
-  updated: now(),
-  variants: {
-    normal: { value: "9450", change: "+", demand: "8" },
-    rainbow: { value: "O/C", change: "+", demand: "10" }
-  }
-});
-
-addPet('currentRobux', {
-  name: "Gift Mimic",
-  img: "https://i.postimg.cc/8FkvxRjC/75.png",
-  description: "Found in the Limited Exclusive Krampus Egg",
-  updated: now(),
-  variants: {
-    normal: { value: "60", change: "+", demand: "6" },
-    rainbow: { value: "270", change: "+", demand: "6" }
-  }
-});
-
-addPet('currentRobux', {
-  name: "Snow Thief",
-  img: "https://i.postimg.cc/QK7KcSnv/80.png",
-  description: "Found in the Limited Exclusive Krampus Egg",
-  updated: now(),
-  variants: {
-    normal: { value: "70", change: "+", demand: "6" },
-    rainbow: { value: "310", change: "+", demand: "6" }
-  }
-});
-
-addPet('currentRobux', {
-  name: "Evil Snowman",
-  img: "https://i.postimg.cc/y3R30nrM/90.png",
-  description: "Found in the Limited Exclusive Krampus Egg",
-  updated: now(),
-  variants: {
-    normal: { value: "100", change: "+", demand: "6" },
-    rainbow: { value: "450", change: "+", demand: "7" }
-  }
-});
-
-addPet('currentRobux', {
-  name: "Krampus",
-  img: "https://i.postimg.cc/1fpNtCFP/krampus.png",
-  description: "Found in the Limited Exclusive Krampus Egg",
-  updated: now(),
-  variants: {
-    normal: { value: "2000", change: "+", demand: "7" },
-    rainbow: { value: "9000", change: "+", demand: "8" }
-  }
-});
-
 addPet('currentRobux', {
   name: "Celestial Candycane",
   img: "https://i.postimg.cc/bSnS1LBc/candy.png",
@@ -618,8 +676,98 @@ addPet('currentRobux', {
   }
 });
 
+addPet('mythicals', {
+  name: "UFO Alien",
+  img: "https://i.postimg.cc/5NPq31B2/mythical-new.png",
+  description: "Found in the Space Egg. Rarity: 1 in 9,091",
+  updated: now(),
+  variants: {
+    normal: { value: "1", change: "-", demand: "7" },
+    gold: { value: "4", change: "-", demand: "8" },   // optional
+    rainbow: { value: "7", change: "-", demand: "8" }
+  }
+});
+
+addPet('exclusiveEgg1', {
+  name: "Kairos",
+  img: "https://i.postimg.cc/XXnv9kTC/kairos.png",
+  description: "Found in the Limited Exclusive Chronos Egg. 80% chance",
+  updated: now(),
+  variants: {
+    normal: { value: "110", change: "+", demand: "7" },
+    rainbow: { value: "350", change: "+", demand: "7" }
+  }
+});
+
+addPet('exclusiveEgg1', {
+  name: "Paradox",
+  img: "https://i.postimg.cc/RqGZdnBy/paradox.png",
+  description: "Found in the Limited Exclusive Chronos Egg. 19.9% chance",
+  updated: now(),
+  variants: {
+    normal: { value: "180", change: "+", demand: "7" },
+    rainbow: { value: "750", change: "+", demand: "7" }
+  }
+});
+
+addPet('exclusiveEgg1', {
+  name: "Chronos",
+  img: "https://i.postimg.cc/SjmKcfwQ/chronos.png",
+  description: "Found in the Limited Exclusive Chronos Egg. 0.1% chance. 36 exist",
+  updated: now(),
+  variants: {
+    normal: { value: "9450", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "10" }
+  }
+});
+
+addPet('exclusiveEgg2', {
+  name: "Gift Mimic",
+  img: "https://i.postimg.cc/8FkvxRjC/75.png",
+  description: "Found in the Limited Exclusive Krampus Egg",
+  updated: now(),
+  variants: {
+    normal: { value: "60", change: "+", demand: "6" },
+    rainbow: { value: "270", change: "+", demand: "6" }
+  }
+});
+
+addPet('exclusiveEgg2', {
+  name: "Snow Thief",
+  img: "https://i.postimg.cc/QK7KcSnv/80.png",
+  description: "Found in the Limited Exclusive Krampus Egg",
+  updated: now(),
+  variants: {
+    normal: { value: "70", change: "+", demand: "6" },
+    rainbow: { value: "310", change: "+", demand: "6" }
+  }
+});
+
+addPet('exclusiveEgg2', {
+  name: "Evil Snowman",
+  img: "https://i.postimg.cc/y3R30nrM/90.png",
+  description: "Found in the Limited Exclusive Krampus Egg",
+  updated: now(),
+  variants: {
+    normal: { value: "100", change: "+", demand: "6" },
+    rainbow: { value: "450", change: "+", demand: "7" }
+  }
+});
+
+addPet('exclusiveEgg2', {
+  name: "Krampus",
+  img: "https://i.postimg.cc/1fpNtCFP/krampus.png",
+  description: "Found in the Limited Exclusive Krampus Egg",
+  updated: now(),
+  variants: {
+    normal: { value: "2050", change: "+", demand: "7" },
+    rainbow: { value: "9225", change: "+", demand: "8" }
+  }
+});
+
+
 // Manual time system
-const fixedTime = new Date("2025-12-28T19:01:00Z").getTime();
+const fixedTime = new Date("2025-12-29T02:08:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
