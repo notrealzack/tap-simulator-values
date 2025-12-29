@@ -68,6 +68,15 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
 
 .change-up { background:#0f4d00; color:#00ff7d; padding:2px 6px; font-size:10px; border-radius:4px; font-weight:700; text-transform:uppercase; }
 .change-down { background:#4d0000; color:#ff4d4d; padding:2px 6px; font-size:10px; border-radius:4px; font-weight:700; text-transform:uppercase; }
+.change-stable {
+  background: #4d4d00;
+  color: #ffff00;
+  padding: 2px 6px;
+  font-size: 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
 .pet-demand { font-weight:700; }
 .demand-red { color:#ff4d4d; }
@@ -98,8 +107,14 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
 }
 
 .pet-card {
-  background: rgba(25, 15, 45, 0.92); /* solid for sharp text */
+  background: rgba(25, 15, 45, 0.92);
   border: 1px solid rgba(140, 90, 255, 0.18);
+
+  width: 190px;     /* ⬅ makes card narrower */
+  padding: 20px;    /* ⬅ reduces overall height */
+
+  border-radius: 12px;
+
   box-shadow:
     0 0 18px rgba(140, 90, 255, 0.12),
     inset 0 0 12px rgba(180, 120, 255, 0.05);
@@ -203,7 +218,7 @@ h2 {
   <div class="tab" onclick="switchSection(event, 'permanentSecrets')">Permanent Secrets</div>
   <div class="tab" onclick="switchSection(event, 'leaderboard')">Leaderboard Pets</div>
   <div class="tab" onclick="switchSection(event, 'currentRobux')">Random Event Pets</div>
-  <div class="tab" onclick="switchSection(event, 'mythicals')">Mythicals / Best Stat Pets</div>
+  <div class="tab" onclick="switchSection(event, 'mythicals')">Best Stat Pet</div>
   <div class="tab" onclick="switchSection(event, 'exclusiveEgg')">Exclusive Eggs</div>
   <div class="tab" onclick="switchSection(event, 'about')">About Us</div>
 </div>
@@ -363,9 +378,22 @@ function renderPetsForSection(section){
       ${p.variants.normal?`<div class="pet-row">
         <div class="variant-normal">Normal</div>
         <div class="value-box">
-          <div class="${p.variants.normal.change.includes('+')?'change-up':'change-down'}">
-            ${p.variants.normal.change.includes('+')?'Rising':'Dropping'}
-          </div>
+          <div class="${
+  p.variants.normal.change === '+'
+    ? 'change-up'
+    : p.variants.normal.change === '='
+    ? 'change-stable'
+    : 'change-down'
+}">
+  ${
+    p.variants.normal.change === '+'
+      ? 'Rising'
+      : p.variants.normal.change === '='
+      ? 'Stable'
+      : 'Dropping'
+  }
+</div>
+
           <div class="value-number">${p.variants.normal.value}</div>
         </div>
         <div class="pet-demand ${normalDemand}">${p.variants.normal.demand}/10</div>
@@ -373,9 +401,22 @@ function renderPetsForSection(section){
       ${p.variants.gold?`<div class="pet-row">
         <div class="variant-gold">Gold</div>
         <div class="value-box">
-          <div class="${p.variants.gold.change.includes('+')?'change-up':'change-down'}">
-            ${p.variants.gold.change.includes('+')?'Rising':'Dropping'}
-          </div>
+          <div class="${
+  p.variants.gold.change === '+'
+    ? 'change-up'
+    : p.variants.gold.change === '='
+    ? 'change-stable'
+    : 'change-down'
+}">
+  ${
+    p.variants.gold.change === '+'
+      ? 'Rising'
+      : p.variants.gold.change === '='
+      ? 'Stable'
+      : 'Dropping'
+  }
+</div>
+
           <div class="value-number">${p.variants.gold.value}</div>
         </div>
         <div class="pet-demand ${goldDemand}">${p.variants.gold.demand}/10</div>
@@ -383,9 +424,22 @@ function renderPetsForSection(section){
       ${p.variants.rainbow?`<div class="pet-row">
         <div class="variant-rainbow">Rainbow</div>
         <div class="value-box">
-          <div class="${p.variants.rainbow.change.includes('+')?'change-up':'change-down'}">
-            ${p.variants.rainbow.change.includes('+')?'Rising':'Dropping'}
-          </div>
+          <div class="${
+  p.variants.rainbow.change === '+'
+    ? 'change-up'
+    : p.variants.rainbow.change === '='
+    ? 'change-stable'
+    : 'change-down'
+}">
+  ${
+    p.variants.rainbow.change === '+'
+      ? 'Rising'
+      : p.variants.rainbow.change === '='
+      ? 'Stable'
+      : 'Dropping'
+  }
+</div>
+
           <div class="value-number">${p.variants.rainbow.value}</div>
         </div>
         <div class="pet-demand ${rainbowDemand}">${p.variants.rainbow.demand}/10</div>
@@ -428,8 +482,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Event Egg. Rarity: 1 in 150,000",
   updated: now(),
   variants: {
-    normal: { value: "110", change: "+", demand: "7" },
-    rainbow: { value: "500", change: "+", demand: "8" }
+    normal: { value: "120", change: "=", demand: "7" },
+    rainbow: { value: "540", change: "=", demand: "8" }
   }
 });
 
@@ -439,8 +493,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "350", change: "+", demand: "8" },
-    rainbow: { value: "1350", change: "+", demand: "8" }
+    normal: { value: "360", change: "=", demand: "8" },
+    rainbow: { value: "1400", change: "=", demand: "8" }
   }
 });
 
@@ -450,8 +504,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Event Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1450", change: "+", demand: "8" },
-    rainbow: { value: "7000", change: "+", demand: "9" }
+    normal: { value: "1500", change: "=", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "9" }
   }
 });
 
@@ -461,8 +515,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 250,000",
   updated: now(),
   variants: {
-    normal: { value: "60", change: "-", demand: "7" },
-    rainbow: { value: "270", change: "-", demand: "7" }
+    normal: { value: "60", change: "+", demand: "7" },
+    rainbow: { value: "270", change: "+", demand: "7" }
   }
 });
 
@@ -472,8 +526,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "120", change: "-", demand: "7" },
-    rainbow: { value: "540", change: "-", demand: "8" }
+    normal: { value: "120", change: "+", demand: "7" },
+    rainbow: { value: "540", change: "+", demand: "8" }
   }
 });
 
@@ -483,8 +537,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
   updated: now(),
   variants: {
-    normal: { value: "900", change: "-", demand: "8" },
-    rainbow: { value: "4000", change: "-", demand: "9" }
+    normal: { value: "900", change: "+", demand: "8" },
+    rainbow: { value: "4000", change: "+", demand: "9" }
   }
 });
 
@@ -594,7 +648,7 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "110", change: "-", demand: "4" },
+    normal: { value: "100", change: "-", demand: "4" },
     rainbow: { value: "400", change: "-", demand: "5" }
   }
 });
@@ -605,8 +659,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 250,000",
   updated: now(),
   variants: {
-    normal: { value: "150", change: "+", demand: "7" },
-    rainbow: { value: "680", change: "+", demand: "8" }
+    normal: { value: "110", change: "-", demand: "7" },
+    rainbow: { value: "500", change: "-", demand: "8" }
   }
 });
 
@@ -616,8 +670,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "700", change: "+", demand: "8" },
-    rainbow: { value: "3150", change: "+", demand: "8" }
+    normal: { value: "650", change: "-", demand: "8" },
+    rainbow: { value: "3000", change: "-", demand: "8" }
   }
 });
 
@@ -627,8 +681,8 @@ addPet('leaderboard', {
   description: "Awarded to the Top 250 Players on the Leaderboard. Dropping because of rb mythicals being cheap and easier to hatch",
   updated: now(),
   variants: {
-    normal: { value: "550", change: "-", demand: "7" },
-    rainbow: { value: "2300", change: "-", demand: "8" }
+    normal: { value: "600", change: "=", demand: "7" },
+    rainbow: { value: "2700", change: "=", demand: "8" }
   }
 });
 
@@ -638,8 +692,8 @@ addPet('leaderboard', {
   description: "Awarded to the Top 100 Players on the Leaderboard. Dropping because of rb mythicals being cheap and easier to hatch",
   updated: now(),
   variants: {
-    normal: { value: "1200", change: "-", demand: "7" },
-    rainbow: { value: "5000", change: "-", demand: "8" }
+    normal: { value: "1250", change: "=", demand: "7" },
+    rainbow: { value: "5500", change: "=", demand: "8" }
   }
 });
 
@@ -649,8 +703,8 @@ addPet('leaderboard', {
   description: "Awarded to the Top 10 Players on the Leaderboard. Dropping because of rb mythicals being cheap and easier to hatch",
   updated: now(),
   variants: {
-    normal: { value: "11000", change: "-", demand: "8" },
-    rainbow: { value: "O/C", change: "-", demand: "10" }
+    normal: { value: "11000", change: "=", demand: "8" },
+    rainbow: { value: "O/C", change: "=", demand: "10" }
   }
 });
 
@@ -682,9 +736,9 @@ addPet('mythicals', {
   description: "Found in the Space Egg. Rarity: 1 in 9,091",
   updated: now(),
   variants: {
-    normal: { value: "1", change: "-", demand: "7" },
-    gold: { value: "4", change: "-", demand: "8" },   // optional
-    rainbow: { value: "7", change: "-", demand: "8" }
+    normal: { value: "0.5", change: "=", demand: "7" },
+    gold: { value: "3", change: "=", demand: "8" },   // optional
+    rainbow: { value: "6", change: "=", demand: "8" }
   }
 });
 
@@ -727,8 +781,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "60", change: "+", demand: "6" },
-    rainbow: { value: "270", change: "+", demand: "6" }
+    normal: { value: "60", change: "=", demand: "6" },
+    rainbow: { value: "270", change: "=", demand: "6" }
   }
 });
 
@@ -738,8 +792,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "70", change: "+", demand: "6" },
-    rainbow: { value: "310", change: "+", demand: "6" }
+    normal: { value: "70", change: "=", demand: "6" },
+    rainbow: { value: "310", change: "=", demand: "6" }
   }
 });
 
@@ -749,7 +803,7 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "100", change: "+", demand: "6" },
+    normal: { value: "100", change: "+", demand: "7" },
     rainbow: { value: "450", change: "+", demand: "7" }
   }
 });
@@ -760,14 +814,13 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "2050", change: "+", demand: "7" },
-    rainbow: { value: "9225", change: "+", demand: "8" }
+    normal: { value: "2200", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "9" }
   }
 });
 
-
 // Manual time system
-const fixedTime = new Date("2025-12-29T02:08:00Z").getTime();
+const fixedTime = new Date("2025-12-29T18:34:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -784,6 +837,8 @@ setInterval(() => {
 </body>
 
 </html>
+
+
 
 
 
