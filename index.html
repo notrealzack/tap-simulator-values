@@ -505,7 +505,7 @@ addPet('limitedSecrets', {
   updated: now(),
   variants: {
     normal: { value: "1500", change: "=", demand: "8" },
-    rainbow: { value: "O/C", change: "+", demand: "9" }
+    rainbow: { value: "6800", change: "=", demand: "9" }
   }
 });
 
@@ -815,12 +815,12 @@ addPet('exclusiveEgg2', {
   updated: now(),
   variants: {
     normal: { value: "2200", change: "+", demand: "8" },
-    rainbow: { value: "O/C", change: "+", demand: "9" }
+    rainbow: { value: "10000", change: "+", demand: "9" }
   }
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-29T18:34:00Z").getTime();
+const fixedTime = new Date("2025-12-29T18:38:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -837,6 +837,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
