@@ -211,7 +211,7 @@ h2 {
 <body>
 
 
-<div class="header-note"><div id="last-updated">Update: The Limited Christmas Event Egg will be leaving in 2-3 days. Leaderboard Pets will be switched out the upcoming week :)</div></div>
+<div class="header-note"><div id="last-updated">Update: The Limited Christmas Event Egg will be leaving in 1-2 days. Leaderboard Pets will be switched out the upcoming week :)</div></div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchSection(event, 'limitedSecrets')">Limited Secrets</div>
@@ -526,8 +526,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "120", change: "+", demand: "7" },
-    rainbow: { value: "540", change: "+", demand: "8" }
+    normal: { value: "130", change: "+", demand: "7" },
+    rainbow: { value: "580", change: "+", demand: "8" }
   }
 });
 
@@ -537,8 +537,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
   updated: now(),
   variants: {
-    normal: { value: "900", change: "+", demand: "8" },
-    rainbow: { value: "4000", change: "+", demand: "9" }
+    normal: { value: "920", change: "+", demand: "8" },
+    rainbow: { value: "4050", change: "+", demand: "9" }
   }
 });
 
@@ -714,8 +714,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Santa's OP Gift Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "1000", change: "+", demand: "7" },
-    rainbow: { value: "4500", change: "+", demand: "8" }
+    normal: { value: "1100", change: "+", demand: "8" },
+    rainbow: { value: "5000", change: "+", demand: "9" }
   }
 });
 
@@ -725,8 +725,8 @@ addPet('currentRobux', {
   description: "Found in the Christmas Spinwheel",
   updated: now(),
   variants: {
-    normal: { value: "550", change: "+", demand: "7" },
-    rainbow: { value: "2500", change: "+", demand: "8" }
+    normal: { value: "450", change: "+", demand: "7" },
+    rainbow: { value: "2000", change: "+", demand: "8" }
   }
 });
 
@@ -770,7 +770,7 @@ addPet('exclusiveEgg1', {
   description: "Found in the Limited Exclusive Chronos Egg. 0.1% chance. 36 exist",
   updated: now(),
   variants: {
-    normal: { value: "9450", change: "+", demand: "8" },
+    normal: { value: "9500", change: "+", demand: "8" },
     rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
@@ -803,8 +803,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "100", change: "+", demand: "7" },
-    rainbow: { value: "450", change: "+", demand: "7" }
+    normal: { value: "110", change: "+", demand: "7" },
+    rainbow: { value: "480", change: "+", demand: "7" }
   }
 });
 
@@ -814,13 +814,13 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "2300", change: "+", demand: "8" },
-    rainbow: { value: "10000", change: "+", demand: "9" }
+    normal: { value: "2500", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "9" }
   }
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-29T18:46:00Z").getTime();
+const fixedTime = new Date("2025-12-30T10:38:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -837,6 +837,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
