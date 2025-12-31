@@ -493,8 +493,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "360", change: "=", demand: "8" },
-    rainbow: { value: "1400", change: "=", demand: "8" }
+    normal: { value: "280", change: "=", demand: "8" },
+    rainbow: { value: "1300", change: "=", demand: "8" }
   }
 });
 
@@ -504,8 +504,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Event Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1500", change: "=", demand: "8" },
-    rainbow: { value: "6800", change: "=", demand: "9" }
+    normal: { value: "1300", change: "=", demand: "8" },
+    rainbow: { value: "6000", change: "=", demand: "9" }
   }
 });
 
@@ -537,8 +537,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
   updated: now(),
   variants: {
-    normal: { value: "920", change: "+", demand: "8" },
-    rainbow: { value: "4050", change: "+", demand: "9" }
+    normal: { value: "900", change: "+", demand: "8" },
+    rainbow: { value: "4000", change: "+", demand: "9" }
   }
 });
 
@@ -682,7 +682,7 @@ addPet('leaderboard', {
   updated: now(),
   variants: {
     normal: { value: "600", change: "=", demand: "7" },
-    rainbow: { value: "2700", change: "=", demand: "8" }
+    rainbow: { value: "2500", change: "=", demand: "8" }
   }
 });
 
@@ -693,7 +693,7 @@ addPet('leaderboard', {
   updated: now(),
   variants: {
     normal: { value: "1250", change: "=", demand: "7" },
-    rainbow: { value: "5500", change: "=", demand: "8" }
+    rainbow: { value: "5000", change: "=", demand: "8" }
   }
 });
 
@@ -703,7 +703,7 @@ addPet('leaderboard', {
   description: "Awarded to the Top 10 Players on the Leaderboard. Dropping because of rb mythicals being cheap and easier to hatch",
   updated: now(),
   variants: {
-    normal: { value: "11000", change: "=", demand: "8" },
+    normal: { value: "10500", change: "=", demand: "8" },
     rainbow: { value: "O/C", change: "=", demand: "10" }
   }
 });
@@ -725,8 +725,8 @@ addPet('currentRobux', {
   description: "Found in the Christmas Spinwheel",
   updated: now(),
   variants: {
-    normal: { value: "450", change: "+", demand: "7" },
-    rainbow: { value: "2000", change: "+", demand: "8" }
+    normal: { value: "500", change: "+", demand: "7" },
+    rainbow: { value: "2100", change: "+", demand: "8" }
   }
 });
 
@@ -814,13 +814,13 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "2600", change: "+", demand: "8" },
-    rainbow: { value: "O/C", change: "+", demand: "9" }
+    normal: { value: "2700", change: "+", demand: "8" },
+    rainbow: { value: "12000", change: "+", demand: "9" }
   }
 });
 
 // Manual time system
-const fixedTime = new Date("2025-12-30T15:40:00Z").getTime();
+const fixedTime = new Date("2025-12-31T00:30:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -837,6 +837,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
