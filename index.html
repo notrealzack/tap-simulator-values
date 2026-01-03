@@ -526,8 +526,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "150", change: "=", demand: "7" },
-    rainbow: { value: "650", change: "=", demand: "8" }
+    normal: { value: "140", change: "=", demand: "7" },
+    rainbow: { value: "620", change: "=", demand: "8" }
   }
 });
 
@@ -780,8 +780,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Santa's OP Gift Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "900", change: "+", demand: "7" },
-    rainbow: { value: "4050", change: "+", demand: "8" }
+    normal: { value: "950", change: "+", demand: "7" },
+    rainbow: { value: "4250", change: "+", demand: "8" }
   }
 });
 
@@ -825,7 +825,7 @@ addPet('exclusiveEgg1', {
   description: "Found in the Limited Exclusive Chronos Egg. 80% chance",
   updated: now(),
   variants: {
-    normal: { value: "110", change: "=", demand: "7" },
+    normal: { value: "100", change: "=", demand: "7" },
     rainbow: { value: "350", change: "=", demand: "7" }
   }
 });
@@ -836,8 +836,8 @@ addPet('exclusiveEgg1', {
   description: "Found in the Limited Exclusive Chronos Egg. 19.9% chance",
   updated: now(),
   variants: {
-    normal: { value: "180", change: "=", demand: "7" },
-    rainbow: { value: "750", change: "=", demand: "7" }
+    normal: { value: "130", change: "=", demand: "7" },
+    rainbow: { value: "600", change: "=", demand: "7" }
   }
 });
 
@@ -897,7 +897,7 @@ addPet('exclusiveEgg2', {
 });
 
 // Manual time system
-const fixedTime = new Date("2026-01-03T11:22:00Z").getTime();
+const fixedTime = new Date("2026-01-03T11:31:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -914,6 +914,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
