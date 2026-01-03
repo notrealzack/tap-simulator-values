@@ -211,7 +211,7 @@ h2 {
 <body>
 
 
-<div class="header-note"><div id="last-updated">Update: Added New Pet Values.</div></div>
+<div class="header-note"><div id="last-updated">Note: Sometimes, you can hatch a Mythcial Starshine Warrior with a 402.01k base stat at level 1. These values are NOT for the that stat pet</div></div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchSection(event, 'limitedSecrets')">Limited Secrets</div>
@@ -810,7 +810,7 @@ addPet('currentRobux', {
 addPet('mythicals', {
   name: "Starshine Warrior",
   img: "https://8upload.com/image/409cbe0be76db7be/new_stat.png",
-  description: "Found in the Limited New Years Event Egg. Sometimes, you can hatch a Starshine Warrior with a 402.01k base stat at level 1",
+  description: "Found in the Limited New Years Event Egg. Sometimes, you can hatch a Starshine Warrior with a 402.01k base stat at level 1. These values are only for the better stat pet",
   updated: now(),
   variants: {
     normal: { value: "2", change: "=", demand: "7" },
@@ -897,7 +897,7 @@ addPet('exclusiveEgg2', {
 });
 
 // Manual time system
-const fixedTime = new Date("2026-01-03T00:16:00Z").getTime();
+const fixedTime = new Date("2026-01-03T00:29:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -914,6 +914,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
