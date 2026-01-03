@@ -211,7 +211,7 @@ h2 {
 <body>
 
 
-<div class="header-note"><div id="last-updated">Update: The Limited Christmas Event Egg will be leaving today. Leaderboard Pets will be switched out the upcoming week :)</div></div>
+<div class="header-note"><div id="last-updated">Update: Added New Pet Values.</div></div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchSection(event, 'limitedSecrets')">Limited Secrets</div>
@@ -537,8 +537,41 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
   updated: now(),
   variants: {
-    normal: { value: "850", change: "=", demand: "8" },
-    rainbow: { value: "3800", change: "=", demand: "9" }
+    normal: { value: "950", change: "=", demand: "8" },
+    rainbow: { value: "4200", change: "=", demand: "9" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "2026 Balloons",
+  img: "https://8upload.com/image/a60ddf8525331343/balloon.png",
+  description: "Found in the Limited New Years Event Egg. Rarity: 1 in 500,000",
+  updated: now(),
+  variants: {
+    normal: { value: "100", change: "=", demand: "7" },
+    rainbow: { value: "450", change: "=", demand: "7" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "New Year Dragon",
+  img: "https://8upload.com/image/c25a161a1aa044a2/dragon.png",
+  description: "Found in the Limited New Years Event Egg. Rarity: 1 in 1,000,000",
+  updated: now(),
+  variants: {
+    normal: { value: "400", change: "=", demand: "7" },
+    rainbow: { value: "1800", change: "=", demand: "8" }
+  }
+});
+
+addPet('limitedSecrets', {
+  name: "2026 Overlord",
+  img: "https://8upload.com/image/fc452cccc3817230/overlord.png",
+  description: "Found in the Limited New Years Event Egg. Rarity: 1 in 2,500,000",
+  updated: now(),
+  variants: {
+    normal: { value: "900", change: "=", demand: "8" },
+    rainbow: { value: "4050", change: "=", demand: "9" }
   }
 });
 
@@ -678,32 +711,65 @@ addPet('permanentSecrets', {
 addPet('leaderboard', {
   name: "Top 250",
   img: "https://i.postimg.cc/5Q9N1fww/250.png",
-  description: "Awarded to the Top 250 Players on the Leaderboard. Dropping because of rb mythicals being cheap and easier to hatch",
+  description: "Awarded to the Top 250 Players on the Leaderboard. Limited Now",
   updated: now(),
   variants: {
-    normal: { value: "600", change: "=", demand: "7" },
-    rainbow: { value: "2500", change: "=", demand: "8" }
+    normal: { value: "600", change: "+", demand: "8" },
+    rainbow: { value: "2650", change: "+", demand: "8" }
   }
 });
 
 addPet('leaderboard', {
   name: "Top 100",
   img: "https://i.postimg.cc/XBN73nw9/100.png",
-  description: "Awarded to the Top 100 Players on the Leaderboard. Dropping because of rb mythicals being cheap and easier to hatch",
+  description: "Awarded to the Top 100 Players on the Leaderboard. Limited Now",
   updated: now(),
   variants: {
-    normal: { value: "1250", change: "=", demand: "7" },
-    rainbow: { value: "5000", change: "=", demand: "8" }
+    normal: { value: "1300", change: "+", demand: "8" },
+    rainbow: { value: "5000", change: "+", demand: "8" }
   }
 });
 
 addPet('leaderboard', {
   name: "Top 10",
   img: "https://i.postimg.cc/zbFX9yRD/10.png",
-  description: "Awarded to the Top 10 Players on the Leaderboard. Dropping because of rb mythicals being cheap and easier to hatch",
+  description: "Awarded to the Top 10 Players on the Leaderboard. Limited Now",
   updated: now(),
   variants: {
-    normal: { value: "10500", change: "=", demand: "8" },
+    normal: { value: "12000", change: "+", demand: "9" },
+    rainbow: { value: "O/C", change: "+", demand: "10" }
+  }
+});
+
+addPet('leaderboard', {
+  name: "Top 250",
+  img: "https://8upload.com/image/d5d970cabf198b70/top_250.png",
+  description: "Awarded to the Top 250 Players on the Leaderboard.",
+  updated: now(),
+  variants: {
+    normal: { value: "550", change: "=", demand: "7" },
+    rainbow: { value: "2500", change: "=", demand: "8" }
+  }
+});
+
+addPet('leaderboard', {
+  name: "Top 100",
+  img: "https://8upload.com/image/3b5c0a07efffa9dd/top_100.png",
+  description: "Awarded to the Top 100 Players on the Leaderboard.",
+  updated: now(),
+  variants: {
+    normal: { value: "1250", change: "=", demand: "7" },
+    rainbow: { value: "4800", change: "=", demand: "8" }
+  }
+});
+
+addPet('leaderboard', {
+  name: "Top 10",
+  img: "https://8upload.com/image/dcd03e3b3d3fe07e/top_10.png",
+  description: "Awarded to the Top 10 Players on the Leaderboard.",
+  updated: now(),
+  variants: {
+    normal: { value: "11500", change: "=", demand: "8" },
     rainbow: { value: "O/C", change: "=", demand: "10" }
   }
 });
@@ -714,8 +780,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Santa's OP Gift Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "1100", change: "+", demand: "8" },
-    rainbow: { value: "5000", change: "+", demand: "9" }
+    normal: { value: "1100", change: "+", demand: "7" },
+    rainbow: { value: "5000", change: "+", demand: "8" }
   }
 });
 
@@ -730,15 +796,26 @@ addPet('currentRobux', {
   }
 });
 
-addPet('mythicals', {
-  name: "UFO Alien",
-  img: "https://i.postimg.cc/5NPq31B2/mythical-new.png",
-  description: "Found in the Space Egg. Rarity: 1 in 9,091",
+addPet('currentRobux', {
+  name: "Disco Lord",
+  img: "https://8upload.com/image/49098f59873d3dc0/disco.png",
+  description: "Found in the Limited New Year Gifts",
   updated: now(),
   variants: {
-    normal: { value: "0.5", change: "=", demand: "7" },
-    gold: { value: "3", change: "=", demand: "8" },   // optional
-    rainbow: { value: "5", change: "=", demand: "8" }
+    normal: { value: "1200", change: "+", demand: "7" },
+    rainbow: { value: "N/C", change: "+", demand: "8" }
+  }
+});
+
+addPet('mythicals', {
+  name: "Starshine Warrior",
+  img: "https://8upload.com/image/409cbe0be76db7be/new_stat.png",
+  description: "Found in the Limited New Years Event Egg. Sometimes, you can hatch a Starshine Warrior with a 402.01k base stat at level 1",
+  updated: now(),
+  variants: {
+    normal: { value: "2", change: "=", demand: "7" },
+    gold: { value: "12", change: "=", demand: "8" },   // optional
+    rainbow: { value: "20", change: "=", demand: "9" }
   }
 });
 
@@ -781,8 +858,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "60", change: "=", demand: "6" },
-    rainbow: { value: "270", change: "=", demand: "6" }
+    normal: { value: "50", change: "=", demand: "5" },
+    rainbow: { value: "220", change: "=", demand: "6" }
   }
 });
 
@@ -792,8 +869,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "70", change: "=", demand: "6" },
-    rainbow: { value: "310", change: "=", demand: "6" }
+    normal: { value: "65", change: "=", demand: "5" },
+    rainbow: { value: "280", change: "=", demand: "6" }
   }
 });
 
@@ -803,8 +880,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "110", change: "+", demand: "7" },
-    rainbow: { value: "480", change: "+", demand: "7" }
+    normal: { value: "80", change: "=", demand: "6" },
+    rainbow: { value: "350", change: "=", demand: "7" }
   }
 });
 
@@ -814,13 +891,13 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "2400", change: "+", demand: "8" },
-    rainbow: { value: "10800", change: "+", demand: "9" }
+    normal: { value: "2500", change: "+", demand: "8" },
+    rainbow: { value: "11250", change: "+", demand: "9" }
   }
 });
 
 // Manual time system
-const fixedTime = new Date("2026-01-01T14:19:00Z").getTime();
+const fixedTime = new Date("2026-01-03T00:16:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -837,6 +914,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
