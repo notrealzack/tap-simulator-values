@@ -211,7 +211,7 @@ h2 {
 <body>
 
 
-<div class="header-note"><div id="last-updated">Note: Sometimes, you can hatch a Mythcial Starshine Warrior with a 402.01k base stat at level 1. These values are NOT for the that stat pet</div></div>
+<div class="header-note"><div id="last-updated">Update: The values of the new pets are currently unstable. Some players may overpay or lowball. We are doing our best to keep the values accurate and up to date.</div></div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchSection(event, 'limitedSecrets')">Limited Secrets</div>
@@ -526,8 +526,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "110", change: "=", demand: "7" },
-    rainbow: { value: "500", change: "=", demand: "8" }
+    normal: { value: "150", change: "=", demand: "7" },
+    rainbow: { value: "650", change: "=", demand: "8" }
   }
 });
 
@@ -548,8 +548,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "100", change: "=", demand: "7" },
-    rainbow: { value: "450", change: "=", demand: "7" }
+    normal: { value: "120", change: "=", demand: "7" },
+    rainbow: { value: "540", change: "=", demand: "7" }
   }
 });
 
@@ -570,8 +570,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 2,500,000",
   updated: now(),
   variants: {
-    normal: { value: "900", change: "=", demand: "8" },
-    rainbow: { value: "4050", change: "=", demand: "9" }
+    normal: { value: "1300", change: "+", demand: "8" },
+    rainbow: { value: "5850", change: "+", demand: "9" }
   }
 });
 
@@ -692,8 +692,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 250,000",
   updated: now(),
   variants: {
-    normal: { value: "110", change: "=", demand: "7" },
-    rainbow: { value: "500", change: "=", demand: "8" }
+    normal: { value: "110", change: "-", demand: "7" },
+    rainbow: { value: "500", change: "-", demand: "8" }
   }
 });
 
@@ -703,8 +703,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "600", change: "=", demand: "8" },
-    rainbow: { value: "2800", change: "=", demand: "8" }
+    normal: { value: "500", change: "-", demand: "8" },
+    rainbow: { value: "2250", change: "-", demand: "8" }
   }
 });
 
@@ -780,8 +780,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Santa's OP Gift Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "1100", change: "+", demand: "7" },
-    rainbow: { value: "5000", change: "+", demand: "8" }
+    normal: { value: "900", change: "+", demand: "7" },
+    rainbow: { value: "4050", change: "+", demand: "8" }
   }
 });
 
@@ -858,8 +858,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "50", change: "=", demand: "5" },
-    rainbow: { value: "220", change: "=", demand: "6" }
+    normal: { value: "40", change: "=", demand: "5" },
+    rainbow: { value: "180", change: "=", demand: "6" }
   }
 });
 
@@ -869,8 +869,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "65", change: "=", demand: "5" },
-    rainbow: { value: "280", change: "=", demand: "6" }
+    normal: { value: "45", change: "=", demand: "5" },
+    rainbow: { value: "200", change: "=", demand: "6" }
   }
 });
 
@@ -880,8 +880,8 @@ addPet('exclusiveEgg2', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "80", change: "=", demand: "6" },
-    rainbow: { value: "350", change: "=", demand: "7" }
+    normal: { value: "65", change: "=", demand: "6" },
+    rainbow: { value: "300", change: "=", demand: "7" }
   }
 });
 
@@ -897,7 +897,7 @@ addPet('exclusiveEgg2', {
 });
 
 // Manual time system
-const fixedTime = new Date("2026-01-03T00:29:00Z").getTime();
+const fixedTime = new Date("2026-01-03T11:18:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -914,6 +914,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
