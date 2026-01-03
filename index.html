@@ -559,8 +559,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "600", change: "+", demand: "7" },
-    rainbow: { value: "2700", change: "+", demand: "8" }
+    normal: { value: "500", change: "+", demand: "7" },
+    rainbow: { value: "2200", change: "+", demand: "8" }
   }
 });
 
@@ -897,7 +897,7 @@ addPet('exclusiveEgg2', {
 });
 
 // Manual time system
-const fixedTime = new Date("2026-01-03T12:31:00Z").getTime();
+const fixedTime = new Date("2026-01-03T13:02:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -914,6 +914,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
