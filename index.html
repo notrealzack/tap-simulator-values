@@ -173,7 +173,7 @@ h2 {
 
 /* Default: desktop & large screens */
 body {
-  zoom: 0.8;
+  zoom: 1;
 }
 
 /* Mobile: keep original size */
@@ -820,7 +820,7 @@ addPet('exclusiveEgg', {
 
 
 // Manual time system
-const fixedTime = new Date("2026-01-03T23:21:00Z").getTime();
+const fixedTime = new Date("2026-01-03T23:28:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -837,6 +837,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
