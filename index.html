@@ -49,7 +49,7 @@ h2 { text-align:center; margin-bottom:15px; font-size:24px; letter-spacing:0.5px
 .section.active { display:block; }
 @keyframes fade { from {opacity:0;} to {opacity:1;} }
 
-.pet-grid { display:flex; flex-wrap:wrap; gap:18px; justify-content:center; }
+.pet-grid { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
 .pet-card { position:relative; background:#1c1c1c; border-radius:14px; width:220px; padding:14px; text-align:center; border:1px solid #2a2a2a; transition:transform 0.2s; }
 .pet-card:hover { transform:scale(1.03); }
 .pet-card img { width:110px; height:110px; object-fit:contain; margin-bottom:10px; }
@@ -143,28 +143,6 @@ h2 {
   text-shadow: 0 0 12px rgba(160, 120, 255, 0.6);
 }
 
-.exclusive-section {
-  display: none;
-}
-
-.exclusive-section.active {
-  display: block;
-}
-
-.exclusive-note {
-  text-align: center;
-  padding: 12px;
-  margin-bottom: 12px;
-  font-size: 14px;
-  color: #cfc3ff;
-
-  background: rgba(20, 12, 35, 0.95);
-  border: 1px solid rgba(140, 90, 255, 0.18);
-  border-radius: 10px;
-
-  box-shadow: 0 0 18px rgba(140, 90, 255, 0.18);
-}
-
 /* ==============================
    Mobile Responsiveness
 ============================== */
@@ -173,12 +151,6 @@ h2 {
     gap: 12px;
     justify-content: center;
   }
-
-  .pet-card {
-    width: 45%; /* 2 cards per row */
-    padding: 12px;
-  }
-
   .pet-name { font-size: 14px; }
   .pet-row { font-size: 12px; }
   .value-number { font-size: 14px; }
@@ -187,31 +159,37 @@ h2 {
 
   .tabs {
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 2px;
   }
 
   .tab {
     flex: 1 1 45%; /* easier to tap */
     text-align: center;
     padding: 10px 0;
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
-/* Small phones */
-@media (max-width: 480px) {
-  .pet-card {
-    width: 90%; /* full width */
-    padding: 10px;
+
+/* Default: desktop & large screens */
+body {
+  zoom: 0.8;
+}
+
+/* Mobile: keep original size */
+@media (max-width: 624px) {
+  body {
+    zoom: 0.44;
   }
 }
+
 
 </style>
 </head>
 <body>
 
 
-<div class="header-note"><div id="last-updated">Update: The values of the new pets are currently unstable. Some players may overpay or lowball. We are doing our best to keep the values accurate and up to date.</div></div>
+<div class="header-note"><div id="last-updated">Note: Updated UI on mobile. DM NotSpeedGuy for any suggestions!</div></div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchSection(event, 'limitedSecrets')">Limited Secrets</div>
@@ -245,41 +223,10 @@ h2 {
   <div class="pet-grid" id="mythicals-grid"></div>
 </div>
 <div id="exclusiveEgg" class="section">
-
-
-<div class="exclusive-note">
- Note: Eggs are listed in release order, starting with Exclusive Egg #1 and progressing to the most recently added.
+  <h2>Exclusive Eggs</h2>
+  <div class="pet-grid" id="exclusiveEgg-grid"></div>
 </div>
 
-  <div class="tabs">
-    <div class="tab active" onclick="switchExclusive(event, 'egg1')">
-      #1
-    </div>
-    <div class="tab" onclick="switchExclusive(event, 'egg2')">
-      #2
-    </div>
-    <div class="tab" onclick="switchExclusive(event, 'egg3')">
-      Soon
-    </div>
-  </div>
-
-  <!-- TITLE LIKE OTHER SECTIONS -->
-  <h2 id="egg1-title">Chronos Egg</h2>
-
-  <div id="egg1" class="exclusive-section active">
-    <div class="pet-grid" id="exclusiveEgg1-grid"></div>
-  </div>
-
-  <h2 id="egg2-title" style="display:none;">Krampus Egg</h2>
-  <div id="egg2" class="exclusive-section">
-    <div class="pet-grid" id="exclusiveEgg2-grid"></div>
-  </div>
-
-  <h2 id="egg3-title" style="display:none;">Soon</h2>
-  <div id="egg3" class="exclusive-section">
-    <div class="pet-grid" id="exclusiveEgg3-grid"></div>
-  </div>
-</div>
 
 <div id="about" class="section">
   <h2>About Us</h2>
@@ -308,28 +255,6 @@ function switchSection(event, id) {
   event.currentTarget.classList.add('active');
 }
 
-
-
-function switchExclusive(e, id) {
-  document.querySelectorAll('.exclusive-section').forEach(s => {
-    s.classList.remove('active');
-  });
-
-  document.getElementById(id).classList.add('active');
-
-  document.querySelectorAll('#exclusiveEgg h2[id$="-title"]').forEach(t => {
-    t.style.display = 'none';
-  });
-
-  document.getElementById(id + '-title').style.display = 'block';
-
-  e.currentTarget.parentElement
-    .querySelectorAll('.tab')
-    .forEach(t => t.classList.remove('active'));
-
-  e.currentTarget.classList.add('active');
-}
-
 const pets = {
   limitedSecrets: [],
   permanentSecrets: [],
@@ -337,10 +262,7 @@ const pets = {
   limitedRobux: [],
   currentRobux: [],
   mythicals: [],
-
-  exclusiveEgg1: [],
-  exclusiveEgg2: [],
-  exclusiveEgg3: []
+  exclusiveEgg: []
 };
 
 
@@ -780,8 +702,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Santa's OP Gift Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "950", change: "+", demand: "7" },
-    rainbow: { value: "4250", change: "+", demand: "8" }
+    normal: { value: "900", change: "+", demand: "7" },
+    rainbow: { value: "4050", change: "+", demand: "8" }
   }
 });
 
@@ -791,8 +713,8 @@ addPet('currentRobux', {
   description: "Found in the Christmas Spinwheel",
   updated: now(),
   variants: {
-    normal: { value: "500", change: "+", demand: "7" },
-    rainbow: { value: "2100", change: "+", demand: "8" }
+    normal: { value: "450", change: "+", demand: "7" },
+    rainbow: { value: "2000", change: "+", demand: "8" }
   }
 });
 
@@ -802,8 +724,8 @@ addPet('currentRobux', {
   description: "Found in the Limited New Year Gifts",
   updated: now(),
   variants: {
-    normal: { value: "1200", change: "+", demand: "7" },
-    rainbow: { value: "N/C", change: "+", demand: "8" }
+    normal: { value: "1300", change: "+", demand: "7" },
+    rainbow: { value: "5800", change: "+", demand: "8" }
   }
 });
 
@@ -819,7 +741,7 @@ addPet('mythicals', {
   }
 });
 
-addPet('exclusiveEgg1', {
+addPet('exclusiveEgg', {
   name: "Kairos",
   img: "https://i.postimg.cc/XXnv9kTC/kairos.png",
   description: "Found in the Limited Exclusive Chronos Egg. 80% chance",
@@ -830,7 +752,7 @@ addPet('exclusiveEgg1', {
   }
 });
 
-addPet('exclusiveEgg1', {
+addPet('exclusiveEgg', {
   name: "Paradox",
   img: "https://i.postimg.cc/RqGZdnBy/paradox.png",
   description: "Found in the Limited Exclusive Chronos Egg. 19.9% chance",
@@ -841,18 +763,18 @@ addPet('exclusiveEgg1', {
   }
 });
 
-addPet('exclusiveEgg1', {
+addPet('exclusiveEgg', {
   name: "Chronos",
   img: "https://i.postimg.cc/SjmKcfwQ/chronos.png",
   description: "Found in the Limited Exclusive Chronos Egg. 0.1% chance. 36 exist",
   updated: now(),
   variants: {
-    normal: { value: "9500", change: "+", demand: "8" },
+    normal: { value: "9500", change: "+", demand: "9" },
     rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
 
-addPet('exclusiveEgg2', {
+addPet('exclusiveEgg', {
   name: "Gift Mimic",
   img: "https://i.postimg.cc/8FkvxRjC/75.png",
   description: "Found in the Limited Exclusive Krampus Egg",
@@ -863,7 +785,7 @@ addPet('exclusiveEgg2', {
   }
 });
 
-addPet('exclusiveEgg2', {
+addPet('exclusiveEgg', {
   name: "Snow Thief",
   img: "https://i.postimg.cc/QK7KcSnv/80.png",
   description: "Found in the Limited Exclusive Krampus Egg",
@@ -874,7 +796,7 @@ addPet('exclusiveEgg2', {
   }
 });
 
-addPet('exclusiveEgg2', {
+addPet('exclusiveEgg', {
   name: "Evil Snowman",
   img: "https://i.postimg.cc/y3R30nrM/90.png",
   description: "Found in the Limited Exclusive Krampus Egg",
@@ -885,19 +807,20 @@ addPet('exclusiveEgg2', {
   }
 });
 
-addPet('exclusiveEgg2', {
+addPet('exclusiveEgg', {
   name: "Krampus",
   img: "https://i.postimg.cc/1fpNtCFP/krampus.png",
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "2500", change: "+", demand: "8" },
-    rainbow: { value: "11250", change: "+", demand: "9" }
+    normal: { value: "2600", change: "+", demand: "8" },
+    rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
 
+
 // Manual time system
-const fixedTime = new Date("2026-01-03T15:00:00Z").getTime();
+const fixedTime = new Date("2026-01-03T23:21:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -914,6 +837,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
