@@ -426,8 +426,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Event Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1200", change: "=", demand: "8" },
-    rainbow: { value: "5500", change: "=", demand: "9" }
+    normal: { value: "1150", change: "=", demand: "8" },
+    rainbow: { value: "5000", change: "=", demand: "9" }
   }
 });
 
@@ -658,7 +658,7 @@ addPet('leaderboard', {
   description: "Awarded to the Top 10 Players on the Leaderboard. Limited Now",
   updated: now(),
   variants: {
-    normal: { value: "12000", change: "+", demand: "9" },
+    normal: { value: "12500", change: "+", demand: "9" },
     rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
@@ -691,7 +691,7 @@ addPet('leaderboard', {
   description: "Awarded to the Top 10 Players on the Leaderboard.",
   updated: now(),
   variants: {
-    normal: { value: "11500", change: "=", demand: "8" },
+    normal: { value: "12000", change: "=", demand: "8" },
     rainbow: { value: "O/C", change: "=", demand: "10" }
   }
 });
@@ -702,7 +702,7 @@ addPet('currentRobux', {
   description: "Found in the Limited Santa's OP Gift Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "900", change: "+", demand: "7" },
+    normal: { value: "850", change: "+", demand: "7" },
     rainbow: { value: "4050", change: "+", demand: "8" }
   }
 });
@@ -813,14 +813,14 @@ addPet('exclusiveEgg', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "2600", change: "+", demand: "8" },
+    normal: { value: "2700", change: "+", demand: "8" },
     rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
 
 
 // Manual time system
-const fixedTime = new Date("2026-01-04T16:48:00Z").getTime();
+const fixedTime = new Date("2026-01-05T10:28:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -837,6 +837,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
