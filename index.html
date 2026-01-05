@@ -470,8 +470,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "120", change: "+", demand: "7" },
-    rainbow: { value: "540", change: "+", demand: "7" }
+    normal: { value: "100", change: "+", demand: "7" },
+    rainbow: { value: "450", change: "+", demand: "7" }
   }
 });
 
@@ -481,8 +481,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "500", change: "+", demand: "7" },
-    rainbow: { value: "2200", change: "+", demand: "8" }
+    normal: { value: "450", change: "+", demand: "7" },
+    rainbow: { value: "2000", change: "+", demand: "8" }
   }
 });
 
@@ -492,8 +492,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 2,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1300", change: "+", demand: "8" },
-    rainbow: { value: "5850", change: "+", demand: "9" }
+    normal: { value: "1200", change: "+", demand: "8" },
+    rainbow: { value: "5400", change: "+", demand: "9" }
   }
 });
 
@@ -658,7 +658,7 @@ addPet('leaderboard', {
   description: "Awarded to the Top 10 Players on the Leaderboard. Limited Now",
   updated: now(),
   variants: {
-    normal: { value: "12500", change: "+", demand: "9" },
+    normal: { value: "13000", change: "+", demand: "9" },
     rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
@@ -820,7 +820,7 @@ addPet('exclusiveEgg', {
 
 
 // Manual time system
-const fixedTime = new Date("2026-01-05T10:28:00Z").getTime();
+const fixedTime = new Date("2026-01-05T19:27:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -837,6 +837,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
