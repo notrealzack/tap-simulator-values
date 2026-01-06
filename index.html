@@ -426,8 +426,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited 5M Event Egg. Rarity: 1 in 1,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1150", change: "=", demand: "8" },
-    rainbow: { value: "5000", change: "=", demand: "9" }
+    normal: { value: "1200", change: "=", demand: "8" },
+    rainbow: { value: "5400", change: "=", demand: "9" }
   }
 });
 
@@ -637,7 +637,7 @@ addPet('leaderboard', {
   updated: now(),
   variants: {
     normal: { value: "600", change: "+", demand: "8" },
-    rainbow: { value: "2650", change: "+", demand: "8" }
+    rainbow: { value: "2650", change: "+", demand: "9" }
   }
 });
 
@@ -648,7 +648,7 @@ addPet('leaderboard', {
   updated: now(),
   variants: {
     normal: { value: "1300", change: "+", demand: "8" },
-    rainbow: { value: "5000", change: "+", demand: "8" }
+    rainbow: { value: "5000", change: "+", demand: "9" }
   }
 });
 
@@ -669,7 +669,7 @@ addPet('leaderboard', {
   description: "Awarded to the Top 250 Players on the Leaderboard.",
   updated: now(),
   variants: {
-    normal: { value: "550", change: "+", demand: "7" },
+    normal: { value: "550", change: "+", demand: "8" },
     rainbow: { value: "2500", change: "+", demand: "8" }
   }
 });
@@ -680,7 +680,7 @@ addPet('leaderboard', {
   description: "Awarded to the Top 100 Players on the Leaderboard.",
   updated: now(),
   variants: {
-    normal: { value: "1250", change: "+", demand: "7" },
+    normal: { value: "1250", change: "+", demand: "8" },
     rainbow: { value: "4800", change: "+", demand: "8" }
   }
 });
@@ -702,8 +702,8 @@ addPet('currentRobux', {
   description: "Found in the Limited Santa's OP Gift Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "850", change: "+", demand: "8" },
-    rainbow: { value: "4050", change: "+", demand: "9" }
+    normal: { value: "900", change: "+", demand: "8" },
+    rainbow: { value: "4100", change: "+", demand: "9" }
   }
 });
 
@@ -831,7 +831,7 @@ addPet('exclusiveEgg', {
 
 
 // Manual time system
-const fixedTime = new Date("2026-01-05T23:35:00Z").getTime();
+const fixedTime = new Date("2026-01-06T11:56:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -848,6 +848,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
