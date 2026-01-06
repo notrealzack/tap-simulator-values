@@ -735,8 +735,8 @@ addPet('currentRobux', {
   description: "Found in the Limited New Years 2026 Freebie Event in Store",
   updated: now(),
   variants: {
-    normal: { value: "1100", change: "+", demand: "8" },
-    rainbow: { value: "4850", change: "+", demand: "9" }
+    normal: { value: "950", change: "+", demand: "8" },
+    rainbow: { value: "4200", change: "+", demand: "9" }
   }
 });
       
@@ -831,7 +831,7 @@ addPet('exclusiveEgg', {
 
 
 // Manual time system
-const fixedTime = new Date("2026-01-06T12:21:00Z").getTime();
+const fixedTime = new Date("2026-01-06T14:01:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -848,6 +848,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
