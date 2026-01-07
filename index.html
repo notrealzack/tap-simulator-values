@@ -470,8 +470,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "100", change: "+", demand: "7" },
-    rainbow: { value: "450", change: "+", demand: "7" }
+    normal: { value: "90", change: "+", demand: "7" },
+    rainbow: { value: "400", change: "+", demand: "7" }
   }
 });
 
@@ -481,8 +481,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "450", change: "+", demand: "7" },
-    rainbow: { value: "2000", change: "+", demand: "8" }
+    normal: { value: "400", change: "+", demand: "7" },
+    rainbow: { value: "1800", change: "+", demand: "8" }
   }
 });
 
@@ -492,8 +492,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 2,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1200", change: "+", demand: "8" },
-    rainbow: { value: "5400", change: "+", demand: "9" }
+    normal: { value: "1000", change: "+", demand: "8" },
+    rainbow: { value: "4800", change: "+", demand: "9" }
   }
 });
 
@@ -713,8 +713,8 @@ addPet('currentRobux', {
   description: "Found in the Christmas Spinwheel",
   updated: now(),
   variants: {
-    normal: { value: "450", change: "+", demand: "8" },
-    rainbow: { value: "2000", change: "+", demand: "8" }
+    normal: { value: "400", change: "=", demand: "8" },
+    rainbow: { value: "1800", change: "=", demand: "8" }
   }
 });
 
@@ -743,7 +743,7 @@ addPet('currentRobux', {
 addPet('mythicals', {
   name: "Starshine Warrior",
   img: "https://8upload.com/image/409cbe0be76db7be/new_stat.png",
-  description: "Found in the Limited New Years Event Egg. Sometimes, you can hatch a Starshine Warrior with a 402.01k base stat at level 1. These values are only for the better stat pet",
+  description: "Found in the Limited New Years Event Egg. Rarity: 1 in 50,001",
   updated: now(),
   variants: {
     normal: { value: "2", change: "=", demand: "7" },
@@ -831,7 +831,7 @@ addPet('exclusiveEgg', {
 
 
 // Manual time system
-const fixedTime = new Date("2026-01-07T14:02:00Z").getTime();
+const fixedTime = new Date("2026-01-07T14:56:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -848,6 +848,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
