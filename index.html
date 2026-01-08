@@ -448,8 +448,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "140", change: "=", demand: "7" },
-    rainbow: { value: "620", change: "=", demand: "8" }
+    normal: { value: "120", change: "=", demand: "7" },
+    rainbow: { value: "550", change: "=", demand: "7" }
   }
 });
 
@@ -459,8 +459,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited Christmas Event Egg. Rarity: 1 in 1,750,000",
   updated: now(),
   variants: {
-    normal: { value: "950", change: "=", demand: "8" },
-    rainbow: { value: "4200", change: "=", demand: "9" }
+    normal: { value: "800", change: "=", demand: "8" },
+    rainbow: { value: "3600", change: "=", demand: "9" }
   }
 });
 
@@ -470,8 +470,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 500,000",
   updated: now(),
   variants: {
-    normal: { value: "90", change: "+", demand: "7" },
-    rainbow: { value: "400", change: "+", demand: "7" }
+    normal: { value: "85", change: "=", demand: "7" },
+    rainbow: { value: "400", change: "=", demand: "7" }
   }
 });
 
@@ -481,8 +481,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "400", change: "+", demand: "7" },
-    rainbow: { value: "1800", change: "+", demand: "8" }
+    normal: { value: "350", change: "=", demand: "7" },
+    rainbow: { value: "1600", change: "=", demand: "8" }
   }
 });
 
@@ -492,8 +492,8 @@ addPet('limitedSecrets', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 2,500,000",
   updated: now(),
   variants: {
-    normal: { value: "1000", change: "+", demand: "8" },
-    rainbow: { value: "4800", change: "+", demand: "9" }
+    normal: { value: "800", change: "=", demand: "8" },
+    rainbow: { value: "3600", change: "=", demand: "9" }
   }
 });
 
@@ -614,8 +614,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 250,000",
   updated: now(),
   variants: {
-    normal: { value: "110", change: "-", demand: "7" },
-    rainbow: { value: "500", change: "-", demand: "8" }
+    normal: { value: "100", change: "-", demand: "7" },
+    rainbow: { value: "450", change: "-", demand: "8" }
   }
 });
 
@@ -625,8 +625,8 @@ addPet('permanentSecrets', {
   description: "Rarity: 1 in 1,000,000",
   updated: now(),
   variants: {
-    normal: { value: "500", change: "-", demand: "8" },
-    rainbow: { value: "2250", change: "-", demand: "8" }
+    normal: { value: "400", change: "-", demand: "8" },
+    rainbow: { value: "1800", change: "-", demand: "8" }
   }
 });
 
@@ -724,8 +724,8 @@ addPet('currentRobux', {
   description: "Found in the Limited New Year Gifts",
   updated: now(),
   variants: {
-    normal: { value: "1400", change: "+", demand: "8" },
-    rainbow: { value: "6300", change: "+", demand: "9" }
+    normal: { value: "1400", change: "=", demand: "8" },
+    rainbow: { value: "6300", change: "=", demand: "9" }
   }
 });
 
@@ -746,9 +746,9 @@ addPet('mythicals', {
   description: "Found in the Limited New Years Event Egg. Rarity: 1 in 50,001",
   updated: now(),
   variants: {
-    normal: { value: "2", change: "=", demand: "7" },
-    gold: { value: "12", change: "=", demand: "8" },   // optional
-    rainbow: { value: "20", change: "=", demand: "9" }
+    normal: { value: "1.5", change: "=", demand: "7" },
+    gold: { value: "8", change: "=", demand: "8" },   // optional
+    rainbow: { value: "12", change: "=", demand: "9" }
   }
 });
 
@@ -831,7 +831,7 @@ addPet('exclusiveEgg', {
 
 
 // Manual time system
-const fixedTime = new Date("2026-01-07T14:56:00Z").getTime();
+const fixedTime = new Date("2026-01-08T12:20:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -848,6 +848,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
