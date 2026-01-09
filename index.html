@@ -713,8 +713,8 @@ addPet('currentRobux', {
   description: "Found in the Christmas Spinwheel",
   updated: now(),
   variants: {
-    normal: { value: "400", change: "=", demand: "8" },
-    rainbow: { value: "1800", change: "=", demand: "8" }
+    normal: { value: "300", change: "=", demand: "8" },
+    rainbow: { value: "1400", change: "=", demand: "8" }
   }
 });
 
@@ -770,7 +770,7 @@ addPet('exclusiveEgg', {
   updated: now(),
   variants: {
     normal: { value: "130", change: "=", demand: "7" },
-    rainbow: { value: "600", change: "=", demand: "7" }
+    rainbow: { value: "550", change: "=", demand: "7" }
   }
 });
 
@@ -780,8 +780,8 @@ addPet('exclusiveEgg', {
   description: "Found in the Limited Exclusive Chronos Egg. 0.1% chance. 36 exist",
   updated: now(),
   variants: {
-    normal: { value: "9500", change: "+", demand: "9" },
-    rainbow: { value: "O/C", change: "+", demand: "10" }
+    normal: { value: "10000", change: "=", demand: "9" },
+    rainbow: { value: "O/C", change: "=", demand: "10" }
   }
 });
 
@@ -824,14 +824,14 @@ addPet('exclusiveEgg', {
   description: "Found in the Limited Exclusive Krampus Egg",
   updated: now(),
   variants: {
-    normal: { value: "2700", change: "+", demand: "8" },
+    normal: { value: "2800", change: "+", demand: "8" },
     rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
 
 
 // Manual time system
-const fixedTime = new Date("2026-01-08T12:20:00Z").getTime();
+const fixedTime = new Date("2026-01-09T18:18:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -848,6 +848,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
